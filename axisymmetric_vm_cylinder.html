@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Constants &#8212; Variable Mass Systems</title>
+    <title>The Axisymmetric, Variable Mass Cylinder &#8212; Variable Mass Systems</title>
   
   
   
@@ -62,11 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'translation_curtis';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'axisymmetric_vm_cylinder';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Equations of Motion and the Angular Velocity of an Axisymmetric Systems" href="axisymmetric_vms.html" />
-    <link rel="prev" title="Introduction" href="intro.html" />
+    <link rel="next" title="Uniform Burn" href="vms_uniform_burn.html" />
+    <link rel="prev" title="Geometry of Torque-free Motion and Nutation Angle Solution" href="geometry-of-motion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,8 +171,8 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Orbital Dynamics of Variable Mass Cylinders</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Constants</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="translation_curtis.html">Constants</a></li>
 
 
 
@@ -189,8 +191,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="geometry-of-motion.html">Geometry of Torque-free Motion and Nutation Angle Solution</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Attitude Dynamics of Variable Mass Cylinders</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="axisymmetric_vm_cylinder.html">The Axisymmetric, Variable Mass Cylinder</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Axisymmetric, Variable Mass Cylinder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vms_uniform_burn.html">Uniform Burn</a></li>
 
 
@@ -332,7 +334,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftranslation_curtis.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Faxisymmetric_vm_cylinder.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +364,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/translation_curtis.ipynb" target="_blank"
+      <li><a href="_sources/axisymmetric_vm_cylinder.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -433,9 +435,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -446,31 +446,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Constants</h1>
+    <h1>The Axisymmetric, Variable Mass Cylinder</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Constants</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-conditions">Initial conditions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#time-span">Time span</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gravitational-acceleration-as-a-function-of-altitude">Gravitational acceleration as a function of altitude</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">Differential equations</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-state">Initial state</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integrate-the-equations-over-the-time-grid">Integrate the equations over the time grid</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-the-results">Extract the results</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-trajectory">Plotting the trajectory</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-g-as-a-function-of-altitude">Plotting g as a function of altitude</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-mass-vs-time">Plotting mass vs time</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-velocity-vs-time">Plotting velocity vs time</a></li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -480,85 +460,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>import numpy as np import matplotlib.pyplot as plt from scipy.integrate
-import odeint</p>
-<section class="tex2jax_ignore mathjax_ignore" id="constants">
-<h1>Constants<a class="headerlink" href="#constants" title="Permalink to this heading">#</a></h1>
-<p>M_E = 5.974e20 G = 6.6742e11 R_E = 6371e3 # radius of Earth (m) Isp =
-300 # specific impulse (s) g0 = G*M_E/R_E**2 # 9.81 #
-gravitational acceleration at Earth’s surface (m/s^2) c = Isp * g0 #
-effective exhaust velocity (m/s) A_e = 1.0 # exit area of the nozzle
-(m^2), assumed p_a = 101325 # atmospheric pressure at sea level (Pa)
-p_e = 0 # exhaust pressure, assumed vacuum for simplicity</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="initial-conditions">
-<h1>Initial conditions<a class="headerlink" href="#initial-conditions" title="Permalink to this heading">#</a></h1>
-<p>v0 = 0 # initial velocity (m/s) gamma0 = np.radians(90) # initial
-flight path angle (radians), vertical launch x0 = 0 # initial downrange
-distance (m) h0 = 0 # initial altitude (m) m_wet = 500e3 # initial wet
-mass (kg) m_dry = 50e3 # dry mass (kg) T = 7.5e6 # initial thrust (N)</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="time-span">
-<h1>Time span<a class="headerlink" href="#time-span" title="Permalink to this heading">#</a></h1>
-<p>t = np.linspace(0, 3600, 1000) # 3600 seconds, 1000 points</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="gravitational-acceleration-as-a-function-of-altitude">
-<h1>Gravitational acceleration as a function of altitude<a class="headerlink" href="#gravitational-acceleration-as-a-function-of-altitude" title="Permalink to this heading">#</a></h1>
-<p>def gravity(h): return g0 * (R_E**2 / (R_E + h)**2)</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="differential-equations">
-<h1>Differential equations<a class="headerlink" href="#differential-equations" title="Permalink to this heading">#</a></h1>
-<p>def rocket_dynamics(y, t, c, A_e, p_a, p_e, m_dry, T): v, gamma, x, h, m
-= y g = gravity(h) if m &gt; m_dry: mdot_e = T / c # mass flow rate
-(kg/s) else: mdot_e = 0 # no more propellant to burn T_dynamic = mdot_e
-* (c + (p_e - p_a) * A_e / mdot_e) if mdot_e != 0 else 0 dvdt =
-(T_dynamic / m) - g * np.sin(gamma) if v == 0: print(“v==0 at t=”, t)
-dgamma_dt = 0 else: print(“v is”, v) print(“gamma is”, gamma) dgamma_dt
-= -(1 / v) * (g - (v**2 / (R_E + h))) * np.cos(gamma) dxdt = (R_E /
-(R_E + h)) * v * np.cos(gamma) dhdt = v * np.sin(gamma) dmdt =
--mdot_e # rate of mass consumption return [dvdt, dgamma_dt, dxdt,
-dhdt, dmdt]</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="initial-state">
-<h1>Initial state<a class="headerlink" href="#initial-state" title="Permalink to this heading">#</a></h1>
-<p>y0 = [v0, gamma0, x0, h0, m_wet]</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="integrate-the-equations-over-the-time-grid">
-<h1>Integrate the equations over the time grid<a class="headerlink" href="#integrate-the-equations-over-the-time-grid" title="Permalink to this heading">#</a></h1>
-<p>solution = odeint(rocket_dynamics, y0, t, args=(c, A_e, p_a, p_e, m_dry,
-T))</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="extract-the-results">
-<h1>Extract the results<a class="headerlink" href="#extract-the-results" title="Permalink to this heading">#</a></h1>
-<p>v, gamma, x, h, m = solution.T</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="plotting-the-trajectory">
-<h1>Plotting the trajectory<a class="headerlink" href="#plotting-the-trajectory" title="Permalink to this heading">#</a></h1>
-<p>plt.figure(figsize=(10, 6)) plt.plot(x / 1e3, h / 1e3) # convert to
-kilometers for readability plt.title(‘Rocket Trajectory’)
-plt.xlabel(‘Downrange Distance (km)’) plt.ylabel(‘Altitude (km)’)
-plt.grid(True) plt.show()</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="plotting-g-as-a-function-of-altitude">
-<h1>Plotting g as a function of altitude<a class="headerlink" href="#plotting-g-as-a-function-of-altitude" title="Permalink to this heading">#</a></h1>
-<p>z = np.linspace(0, 1000e3, 1000) # altitude from 0 to 1000 km g_z =
-gravity(z) plt.figure(figsize=(10, 6)) plt.plot(z / 1e3, g_z / g0) #
-plot g/g0 plt.title(‘Gravitational Acceleration vs Altitude’)
-plt.xlabel(‘Altitude (km)’) plt.ylabel(‘g / g0’) plt.grid(True)
-plt.show()</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="plotting-mass-vs-time">
-<h1>Plotting mass vs time<a class="headerlink" href="#plotting-mass-vs-time" title="Permalink to this heading">#</a></h1>
-<p>plt.figure(figsize=(10, 6)) plt.plot(t, m / 1e3) # convert mass to
-tonnes for readability plt.title(‘Rocket Mass vs Time’) plt.xlabel(‘Time
-(s)’) plt.ylabel(‘Mass (tonnes)’) plt.grid(True) plt.show()</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="plotting-velocity-vs-time">
-<h1>Plotting velocity vs time<a class="headerlink" href="#plotting-velocity-vs-time" title="Permalink to this heading">#</a></h1>
-<p>plt.figure(figsize=(10, 6)) plt.plot(t, v / 1e3) # convert velocity to
-km/s for readability plt.title(‘Rocket Velocity vs Time’)
-plt.xlabel(‘Time (s)’) plt.ylabel(‘Velocity (km/s)’) plt.grid(True)
-plt.show()</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-axisymmetric-variable-mass-cylinder">
+<h1>The Axisymmetric, Variable Mass Cylinder<a class="headerlink" href="#the-axisymmetric-variable-mass-cylinder" title="Permalink to this heading">#</a></h1>
+<figure class="align-default" id="figure-4-4">
+<a class="reference internal image-reference" href="_images/Fig3.png"><img alt="_images/Fig3.png" src="_images/Fig3.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Variable mass cylinder.</span><a class="headerlink" href="#figure-4-4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Figure <a class="reference internal" href="#figure-4-4"><span class="std std-numref">Fig. 3</span></a> is that of a system that is initially a cylinder as represented by the dashed lines. The mass and inertia of this system is allowed to vary with time. As in the case of rockets, combustion is one plausible cause for these time-varying properties. Thus, at a general instant, some parts of the system may be solid while other parts are fluid. The solid part of the system is denoted <span class="math notranslate nohighlight">\(B\)</span>. The dotted line represents a control region <span class="math notranslate nohighlight">\(C\)</span> of constant volume and surface area that has the same shape as the original cylinder and is rigidly attached to <span class="math notranslate nohighlight">\(B\)</span>. Only matter within <span class="math notranslate nohighlight">\(C\)</span> at any instant is considered to make up the system. Interest here is in visualizing the motion of variable mass cylinders and understanding their nutational stability.</p>
+<p>Equations <a class="reference internal" href="axisymmetric_vms.html#equation-eq11">(11)</a>-<a class="reference internal" href="axisymmetric_vms.html#equation-eq13">(13)</a> govern the attitude motion of the variable mass cylinder while Equations <a class="reference internal" href="axisymmetric_vms.html#equation-eq17">(17)</a>, <a class="reference internal" href="axisymmetric_vms.html#equation-eq29">(29)</a>, and <a class="reference internal" href="axisymmetric_vms.html#equation-eq30">(30)</a> are the solutions to the angular speeds. Eke and Wang <span id="id1">[<a class="reference internal" href="refs.html#id12" title="F.O. Eke and S.-M. Wang. Attitude behavior of a variable mass cylinder. J. Appl. Mech., 62(4):935-940, 1995.">Eke and Wang, 1995</a>]</span> identified idealized burn scenarios of which three are examined here. They are named the uniform burn, end burn, and radial burn. Each of these burns is explained in their respective sections. Inertia change due to fluid mass is neglected in all burn cases. The assumed properties of the system in creating the results presented are as follows. For the presented results, the density of the rigid propellant is assumed to be <span class="math notranslate nohighlight">\(1000\)</span> kg/m<span class="math notranslate nohighlight">\(^3\)</span>. The initial angular speeds are assumed to be <span class="math notranslate nohighlight">\(\omega_0=0.2\)</span> rad/s, and <span class="math notranslate nohighlight">\(\omega_{30} = 0.3\)</span> rad/s; note that in a realistic rocket scenario, the spin rate would be an order of magnitude greater than the transverse rates. The duration of the burn is assumed to be <span class="math notranslate nohighlight">\(100\)</span> s unless mentioned otherwise. Other assumptions concerning the geometry are discussed under each burn scenario.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -592,20 +503,20 @@ plt.show()</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="geometry-of-motion.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction</p>
+        <p class="prev-next-title">Geometry of Torque-free Motion and Nutation Angle Solution</p>
       </div>
     </a>
     <a class="right-next"
-       href="axisymmetric_vms.html"
+       href="vms_uniform_burn.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Equations of Motion and the Angular Velocity of an Axisymmetric Systems</p>
+        <p class="prev-next-title">Uniform Burn</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -615,32 +526,6 @@ plt.show()</p>
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Constants</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-conditions">Initial conditions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#time-span">Time span</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gravitational-acceleration-as-a-function-of-altitude">Gravitational acceleration as a function of altitude</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">Differential equations</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-state">Initial state</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integrate-the-equations-over-the-time-grid">Integrate the equations over the time grid</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-the-results">Extract the results</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-trajectory">Plotting the trajectory</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-g-as-a-function-of-altitude">Plotting g as a function of altitude</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-mass-vs-time">Plotting mass vs time</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-velocity-vs-time">Plotting velocity vs time</a></li>
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>

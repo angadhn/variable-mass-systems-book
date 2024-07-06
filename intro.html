@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Equations of Motion and the Angular Velocity of an Axisymmetric Systems &#8212; My sample book</title>
+    <title>Introduction &#8212; Variable Mass Systems</title>
   
   
   
@@ -62,8 +62,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -154,8 +152,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/HQ_Final_Logo.png" class="logo__image only-light" alt="Variable Mass Systems - Home"/>
+    <script>document.write(`<img src="_static/HQ_Final_Logo.png" class="logo__image only-dark" alt="Variable Mass Systems - Home"/>`);</script>
   
   
 </a></div>
@@ -165,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Equations of Motion and the Angular Velocity of an Axisymmetric Systems
+                    Introduction
                 </a>
             </li>
         </ul>
@@ -184,9 +182,14 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Axisymmetric Variable Mass Systems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="axisymmetric_vms.html">Equations of Motion and the Angular Velocity of an Axisymmetric Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geometry-of-motion.html">Geometry of Torque-free Motion and Nutation Angle Solution</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Attitude Dynamics of Variable Mass Cylinders</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="geometry-of-motion.html">Geometry of Torque-free Motion and Nutation Angle Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="axisymmetric_vm_cylinder.html">The Axisymmetric, Variable Mass Cylinder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vms_uniform_burn.html">Uniform Burn</a></li>
 
 
@@ -429,9 +432,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -442,20 +443,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Equations of Motion and the Angular Velocity of an Axisymmetric Systems</h1>
+    <h1>Introduction</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-rate">Spin rate</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transverse-rate">Transverse rate</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -465,137 +457,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="equations-of-motion-and-the-angular-velocity-of-an-axisymmetric-systems">
-<h1>Equations of Motion and the Angular Velocity of an Axisymmetric Systems<a class="headerlink" href="#equations-of-motion-and-the-angular-velocity-of-an-axisymmetric-systems" title="Permalink to this heading">#</a></h1>
-<p><a class="reference internal" href="#fig-general-variable-mass-system"><span class="std std-numref">Fig. 1</span></a> is of a general variable mass system. It comprises a consumable rigid base B and a fluid phase F. A massless shell C of constant volume <span class="math notranslate nohighlight">\(V_0\)</span> and constant surface area <span class="math notranslate nohighlight">\(S_0\)</span> is rigidly attached to B. It is assumed that mass can enter or exit C through the region represented as a dashed circle of radius <span class="math notranslate nohighlight">\(R\)</span>. At every instant, the shell and everything within it is considered to be the system of interest.</p>
-<figure class="align-default" id="fig-general-variable-mass-system">
-<a class="reference internal image-reference" href="_images/Fig1.png"><img alt="_images/Fig1.png" src="_images/Fig1.png" style="height: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">General variable mass system.</span><a class="headerlink" href="#fig-general-variable-mass-system" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<p>The vector equation of attitude motion of such a system can be derived from the laws of mechanics (such as Newton-Euler equations, Lagrange’s method, etc.) and appropriately invoking Reynold’s Transport Theorem. This approach has been discussed in <span id="id1">[<a class="reference internal" href="refs.html#id6" title="A. Nanjangud and F.O. Eke. Lagrange's equations for rocket-type variable mass systems. International Rev. Aerosp. Eng., 5(5):256-260, 2012.">Nanjangud and Eke, 2012</a>]</span>. The following is the equation of attitude motion of a general variable mass system:</p>
-<div class="math notranslate nohighlight" id="equation-eq1">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eq1" title="Permalink to this equation">#</a></span>\[\begin{split}\mathbf{M}^* = \mathbf{I}^* \cdot \boldsymbol{\alpha}
-  + \boldsymbol{\omega} \times (\mathbf{I}^* \cdot \boldsymbol{\omega})
-  + \frac{^B d \mathbf{I}^*}{dt} \cdot \boldsymbol{\omega} \\
-  + \int_{S_0} \rho \mathbf{[p \times (\boldsymbol{\omega} \times p)](v_r \cdot {n})} \, dS \\
-  + \int_{V_0} \rho \mathbf{[\boldsymbol{\omega} \times (p \times v_r)]} \, dV
-  + \frac{^B d}{dt} \int_{V_0} \rho \mathbf{(p \times v_r)} \, dV \\
-  + \int_{S_0} \rho \mathbf{(p \times v_r)}(\mathbf{v_r} \cdot {\mathbf{n}}) \, dS\end{split}\]</div>
-<p>Several other forms of the equation of attitude motion have been derived for a variable mass system in the literature. However, Equation <a class="reference internal" href="#equation-eq1">(1)</a> is most tractable for examining the attitude evolution as it is decoupled from the translational dynamics.</p>
-<p>The volume integrals in Equation <a class="reference internal" href="#equation-eq1">(1)</a> are typically hard to evaluate in closed-form since the internal flow field is not generally known within a system. However, in the case of rockets, reasonable assumptions can be made about this internal flow. It is typically assumed that the internal flow of gases within a rocket relative to its casing is both steady and axisymmetric. Further assuming that the flow lacks a whirl component forces the last three terms of Equation <a class="reference internal" href="#equation-eq1">(1)</a> to disappear, making it less cumbersome. Thus, the equation of attitude motion becomes:</p>
-<div class="math notranslate nohighlight" id="equation-eq2">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eq2" title="Permalink to this equation">#</a></span>\[\begin{split}\mathbf{M}^* = \mathbf{I}^* \cdot \boldsymbol{\alpha}
-  + \boldsymbol{\omega} \times (\mathbf{I^*} \cdot \boldsymbol{\omega}) 
-  + \frac{^B d \mathbf{I}^*}{dt} \cdot \boldsymbol{\omega} \\
-  + \int_{S_0} \rho \mathbf{\big[p \times (\boldsymbol{\omega} \times p)\big](v_r \cdot {n})} \, dS\end{split}\]</div>
-<p>The remainder of this paper concerns the torque-free motions of axisymmetric variable mass systems so <span class="math notranslate nohighlight">\(\mathbf{M^* = 0}\)</span>. Note that though this non-whirling flow assumption is not realistic, it has been shown that the magnitude of the transverse angular rates are unaffected by such a flow assumption <span id="id2">[<a class="reference internal" href="refs.html#id13" title="S.-M. Wang and F.O. Eke. Rotational dynamics of axisymmetric variable mass systems. J. Appl. Mech., 62(4):970-974, 1995.">Wang and Eke, 1995</a>]</span>. As stability information in this paper is derived from the magnitude of the angular rates, the non-whirling flow assumption is sufficient.</p>
-<p>Referring back to Figure <a class="reference internal" href="#fig-general-variable-mass-system"><span class="std std-numref">Fig. 1</span></a>, <span class="math notranslate nohighlight">\(\mathbf{b}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{b}_2\)</span>, <span class="math notranslate nohighlight">\(\mathbf{b}_3\)</span> are a dextral set of unit vectors affixed in B and parallel to its principal directions. The instantaneous central inertia dyadic of this axisymmetric system is:</p>
-<div class="math notranslate nohighlight" id="equation-eq3">
-<span class="eqno">(3)<a class="headerlink" href="#equation-eq3" title="Permalink to this equation">#</a></span>\[\mathbf{I}^* \triangleq I \, \mathbf{b}_1 \mathbf{b}_1 + I \, \mathbf{b}_2 \mathbf{b}_2 + J \, \mathbf{b}_3 \mathbf{b}_3\]</div>
-<p>where <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(J\)</span> are the instantaneous central principal moments of inertia of the variable mass system. Note that the mass center, <span class="math notranslate nohighlight">\(S^*\)</span>, is not necessarily fixed relative to B and is always located on the symmetry axis, parallel to <span class="math notranslate nohighlight">\(\mathbf{b}_3\)</span>. Further, the inertial angular velocity of B at any instant is:</p>
-<div class="math notranslate nohighlight" id="equation-eq4">
-<span class="eqno">(4)<a class="headerlink" href="#equation-eq4" title="Permalink to this equation">#</a></span>\[\boldsymbol{\omega} \triangleq \omega_1 \mathbf{b}_1 + \omega_2 \mathbf{b}_2 + \omega_3 \mathbf{b}_3\]</div>
-<p>and, as a result, the inertial angular acceleration is:</p>
-<div class="math notranslate nohighlight" id="equation-eq5">
-<span class="eqno">(5)<a class="headerlink" href="#equation-eq5" title="Permalink to this equation">#</a></span>\[\boldsymbol{\alpha} = \dot{\omega}_1 \mathbf{b}_1 + \dot{\omega}_2 \mathbf{b}_2 + \dot{\omega}_3 \mathbf{b}_3\]</div>
-<p>The first three terms on the right-hand side of Equation <a class="reference internal" href="#equation-eq2">(2)</a> evaluate to:</p>
-<div class="math notranslate nohighlight" id="equation-eq6">
-<span class="eqno">(6)<a class="headerlink" href="#equation-eq6" title="Permalink to this equation">#</a></span>\[\mathbf{I}^* \cdot \boldsymbol{\alpha} = I \dot{\omega}_1 \mathbf{b}_1 + I \dot{\omega}_2 \mathbf{b}_2 + J \dot{\omega}_3 \mathbf{b}_3\]</div>
-<div class="math notranslate nohighlight" id="equation-eq7">
-<span class="eqno">(7)<a class="headerlink" href="#equation-eq7" title="Permalink to this equation">#</a></span>\[\boldsymbol{\omega} \times (\mathbf{I}^* \cdot \boldsymbol{\omega}) = (J - I)\omega_2 \omega_3 \mathbf{b}_1 - (J - I)\omega_1 \omega_3 \mathbf{b}_2\]</div>
-<div class="math notranslate nohighlight" id="equation-eq8">
-<span class="eqno">(8)<a class="headerlink" href="#equation-eq8" title="Permalink to this equation">#</a></span>\[\frac{^B d \mathbf{I}^*}{dt} \cdot \boldsymbol{\omega} = \dot{I} \omega_1 \mathbf{b}_1 + \dot{I} \omega_2 \mathbf{b}_2 + \dot{J} \omega_3 \mathbf{b}_3\]</div>
-<p>The assumed steady symmetry of the internal fluid flow is further constrained to be uniform along the exit plane so that <span class="math notranslate nohighlight">\(\mathbf{v_r \cdot n}= u = \text{constant}\)</span>, which then yields the following expression for the surface integral in Equation <a class="reference internal" href="#equation-eq2">(2)</a>:</p>
-<div class="math notranslate nohighlight" id="equation-eq9">
-<span class="eqno">(9)<a class="headerlink" href="#equation-eq9" title="Permalink to this equation">#</a></span>\[\int_{S_0} \rho \mathbf{[p \times (\boldsymbol{\omega} \times p)](v_r \cdot {n})} \, dS = -\dot{m} \big[(z_e^2 + \frac{R^2}{4})(\omega_1 \mathbf{b}_1 + \omega_2 \mathbf{b}_2) + \frac{R^2}{2}\omega_3 \mathbf{b}_3 \big]\]</div>
-<p>where <span class="math notranslate nohighlight">\(\dot{m}\)</span>, the rate of mass loss, is given by:</p>
-<div class="math notranslate nohighlight" id="equation-eq10">
-<span class="eqno">(10)<a class="headerlink" href="#equation-eq10" title="Permalink to this equation">#</a></span>\[\dot{m} = -\rho_{exit} \pi R^2 u = \text{constant}\]</div>
-<p><span class="math notranslate nohighlight">\(\rho_{exit}\)</span> is the assumed density of exhaust gases on the exit plane.</p>
-<p>Substituting Equations <a class="reference internal" href="#equation-eq6">(6)</a>, <a class="reference internal" href="#equation-eq7">(7)</a>, <a class="reference internal" href="#equation-eq8">(8)</a>, and <a class="reference internal" href="#equation-eq9">(9)</a> into Equation <a class="reference internal" href="#equation-eq2">(2)</a> yields:</p>
-<div class="math notranslate nohighlight" id="equation-eq11">
-<span class="eqno">(11)<a class="headerlink" href="#equation-eq11" title="Permalink to this equation">#</a></span>\[\dot{\omega}_1 = \frac{I - J}{I} \omega_2 \omega_3 - \frac{1}{I} \big[\dot{I} - \dot{m}(z_e^2 + \frac{R^2}{4}) \big] \omega_1\]</div>
-<div class="math notranslate nohighlight" id="equation-eq12">
-<span class="eqno">(12)<a class="headerlink" href="#equation-eq12" title="Permalink to this equation">#</a></span>\[\dot{\omega}_2 = -\frac{I - J}{I} \omega_3 \omega_1 - \frac{1}{I} \big[\dot{I} - \dot{m}(z_e^2 + \frac{R^2}{4}) \big] \omega_2\]</div>
-<div class="math notranslate nohighlight" id="equation-eq13">
-<span class="eqno">(13)<a class="headerlink" href="#equation-eq13" title="Permalink to this equation">#</a></span>\[\dot{\omega}_3 = - \frac{1}{J} \big[\dot{J} - \dot{m}(\frac{R^2}{2}) \ \big] \omega_3\]</div>
-<p>Equations <a class="reference internal" href="#equation-eq11">(11)</a> - <a class="reference internal" href="#equation-eq13">(13)</a> are the scalar equations of attitude motion for an axisymmetric, torque-free variable mass system with axisymmetric non-whirling internal mass flow. Equations <a class="reference internal" href="#equation-eq11">(11)</a> and <a class="reference internal" href="#equation-eq12">(12)</a> are commonly referred to as the equations of transverse attitude motion while Equation <a class="reference internal" href="#equation-eq13">(13)</a> is the spin equation of motion; <span class="math notranslate nohighlight">\(\omega_1\)</span> and <span class="math notranslate nohighlight">\(\omega_2\)</span> are transverse rates and <span class="math notranslate nohighlight">\(\omega_3\)</span> is the spin rate. The attitude motion of a variable system is characterized by solving these equations.</p>
-<section id="spin-rate">
-<h2>Spin rate<a class="headerlink" href="#spin-rate" title="Permalink to this heading">#</a></h2>
-<p>As the spin equation of motion is decoupled from the transverse equations of motion, an expression for the spin rate can be easily obtained and is given by</p>
-<div class="math notranslate nohighlight" id="equation-eq14">
-<span class="eqno">(14)<a class="headerlink" href="#equation-eq14" title="Permalink to this equation">#</a></span>\[\omega_3 = \omega_{30} \text{exp}(\Phi)\]</div>
-<p>where</p>
-<div class="math notranslate nohighlight" id="equation-eq15">
-<span class="eqno">(15)<a class="headerlink" href="#equation-eq15" title="Permalink to this equation">#</a></span>\[\Phi = - \int_0^t \bigg[\bigg(\dot J - \dot m R^2/2\bigg)/J \bigg] \mathrm{d}t.\]</div>
-<p>If <span class="math notranslate nohighlight">\(J \triangleq m k_3^2\)</span>, where <span class="math notranslate nohighlight">\(k_3\)</span> is the time-varying axial radius of gyration, then <span class="math notranslate nohighlight">\(\Phi\)</span> evaluates to</p>
-<div class="math notranslate nohighlight" id="equation-eq16">
-<span class="eqno">(16)<a class="headerlink" href="#equation-eq16" title="Permalink to this equation">#</a></span>\[\Phi = \int_{m(0)}^{m} \frac{(R^2/2)}{k_3^2} \frac{\mathrm{d}m}{m} + \mathrm{ln}\bigg(\frac{J(0)}{J}\bigg).\]</div>
-<p>Substituting for <span class="math notranslate nohighlight">\(\Phi\)</span> in Equation <a class="reference internal" href="#equation-eq14">(14)</a> gives the following expression for the spin rate</p>
-<div class="math notranslate nohighlight" id="equation-eq17">
-<span class="eqno">(17)<a class="headerlink" href="#equation-eq17" title="Permalink to this equation">#</a></span>\[\omega_3 = \omega_{30} \frac{J(0)}{J} \text{exp}\bigg(\int_{m(0)}^{m} \frac{(R^2/2)}{k_3^2} \frac{\mathrm{d}m}{m} \bigg)\]</div>
-<p>Examining Equation <a class="reference internal" href="#equation-eq17">(17)</a>, the spin rate may decay, stay constant, grow, or fluctuate. Another observation that can be added to this is that the spin rate retains the polarity of its initial condition; if the initial condition is positive, then the spin rate is always non-negative, and vice versa. Further analysis in this chapter assumes a positive value for the initial spin rate. Additionally, if <span class="math notranslate nohighlight">\(k_3^2\)</span> is assumed to be a constant in Equation <a class="reference internal" href="#equation-eq17">(17)</a>, then</p>
-<div class="math notranslate nohighlight" id="equation-eq18">
-<span class="eqno">(18)<a class="headerlink" href="#equation-eq18" title="Permalink to this equation">#</a></span>\[\omega_3 = \omega_{30} \bigg( \frac{m(0)}{m}\bigg) ^{1 - \frac{R^2}{2k_3^2}}.\]</div>
-<p>Equation <a class="reference internal" href="#equation-eq18">(18)</a> asserts that the spin rate cannot fluctuate for a system with constant axial radius of gyration; it can only grow or decay monotonically, or stay constant. It can then also be inferred that a time-varying axial radius of gyration can lead to fluctuations in the spin rate. Thus, the radius of gyration has a crucial effect on the spin rate. These comments on the spin rate are in agreement with the work of Snyder and Warner <span id="id3">[<a class="reference internal" href="refs.html#id32" title="V.W. Snyder and G.G. Warner. A re-evaluation of jet damping. J. Spacecr. Rockets, 5:364-366, 1968.">Snyder and Warner, 1968</a>]</span>, and Wang and Eke <span id="id4">[<a class="reference internal" href="refs.html#id13" title="S.-M. Wang and F.O. Eke. Rotational dynamics of axisymmetric variable mass systems. J. Appl. Mech., 62(4):970-974, 1995.">Wang and Eke, 1995</a>]</span>.</p>
-</section>
-<section id="transverse-rate">
-<h2>Transverse rate<a class="headerlink" href="#transverse-rate" title="Permalink to this heading">#</a></h2>
-<p>The transverse angular speeds can be solved for in a variety of different ways. Defining a complex variable <span class="math notranslate nohighlight">\(\omega_c\)</span> as</p>
-<div class="math notranslate nohighlight" id="equation-eq19">
-<span class="eqno">(19)<a class="headerlink" href="#equation-eq19" title="Permalink to this equation">#</a></span>\[\omega_c \triangleq \omega_1 + j \omega_2\]</div>
-<p>allows Equations <a class="reference internal" href="#equation-eq11">(11)</a> and <a class="reference internal" href="#equation-eq12">(12)</a> to be combined to yield a differential equation linear in <span class="math notranslate nohighlight">\(\omega_c\)</span>:</p>
-<div class="math notranslate nohighlight" id="equation-eq20">
-<span class="eqno">(20)<a class="headerlink" href="#equation-eq20" title="Permalink to this equation">#</a></span>\[\dot{\omega}_c = \Bigg\{-j \frac{I - J}{I} \omega_3 - \frac{1}{I}\bigg[\dot{I} - \dot{m}(z_e^2 + \frac{R^2}{4})\bigg]\Bigg\} \omega_c.\]</div>
-<p>Integrating Equation <a class="reference internal" href="#equation-eq20">(20)</a> yields</p>
-<div class="math notranslate nohighlight" id="equation-eq21">
-<span class="eqno">(21)<a class="headerlink" href="#equation-eq21" title="Permalink to this equation">#</a></span>\[{\omega}_c = \omega_{co} \cdot \Gamma \cdot \text{exp} \bigg(-j\chi\bigg)\]</div>
-<p>where</p>
-<div class="math notranslate nohighlight" id="equation-eq22">
-<span class="eqno">(22)<a class="headerlink" href="#equation-eq22" title="Permalink to this equation">#</a></span>\[\Gamma = \text{exp} \bigg[ -\int_0^t \frac{1}{I}\bigg[\dot{I} - \dot{m}(z_e^2 + \frac{R^2}{4})\bigg] \mathrm{d}t \bigg]\]</div>
-<p>and</p>
-<div class="math notranslate nohighlight" id="equation-eq23">
-<span class="eqno">(23)<a class="headerlink" href="#equation-eq23" title="Permalink to this equation">#</a></span>\[\chi = \int_0^t (1 - \frac{J}{I}) \omega_3 \mathrm{d}t.\]</div>
-<p>A consequence of Equation <a class="reference internal" href="#equation-eq23">(23)</a> is</p>
-<div class="math notranslate nohighlight" id="equation-eq24">
-<span class="eqno">(24)<a class="headerlink" href="#equation-eq24" title="Permalink to this equation">#</a></span>\[\dot \chi = (1 - \frac{J}{I}) \omega_3\]</div>
-<p>where <span class="math notranslate nohighlight">\(\dot \chi\)</span> has the units of angular speed.</p>
-<p>From Equations <a class="reference internal" href="#equation-eq21">(21)</a> and <a class="reference internal" href="#equation-eq19">(19)</a>, the transverse speeds are given by</p>
-<div class="math notranslate nohighlight" id="equation-eq25">
-<span class="eqno">(25)<a class="headerlink" href="#equation-eq25" title="Permalink to this equation">#</a></span>\[\omega_1 = \Gamma (\omega_{10} \cos\chi + \omega_{20}\sin\chi)\]</div>
-<div class="math notranslate nohighlight" id="equation-eq26">
-<span class="eqno">(26)<a class="headerlink" href="#equation-eq26" title="Permalink to this equation">#</a></span>\[\omega_2 = \Gamma(-\omega_{10}\sin\chi + \omega_{20}\cos\chi)\]</div>
-<p>and are oscillatory in nature.</p>
-<p>Further, a transverse angular velocity vector <span class="math notranslate nohighlight">\(\boldsymbol{\omega}_{t}\)</span> which lies in the plane made by the principal directions <span class="math notranslate nohighlight">\(\mathbf{b}_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}_2\)</span> can also be defined as</p>
-<div class="math notranslate nohighlight" id="equation-eq27">
-<span class="eqno">(27)<a class="headerlink" href="#equation-eq27" title="Permalink to this equation">#</a></span>\[\boldsymbol{\omega}_{t} \triangleq \omega_1 {\bf b}_1+ \omega_2 {\bf b}_2,\]</div>
-<p>whose magnitude is</p>
-<div class="math notranslate nohighlight" id="equation-eq28">
-<span class="eqno">(28)<a class="headerlink" href="#equation-eq28" title="Permalink to this equation">#</a></span>\[\omega_{12} = ||\boldsymbol{\omega}_{t}||= \sqrt{\omega_1^2 + \omega_2^2} = \sqrt{\Gamma^2 (\omega_{10}^2 +\omega_{20}^2)} = \Gamma \omega_0\]</div>
-<p>where <span class="math notranslate nohighlight">\(\omega_0 \triangleq \sqrt{\omega_{10}^2 + \omega_{20}^2} = \text{constant}\)</span>. The principal directions may be chosen such that <span class="math notranslate nohighlight">\(\omega_{10} = 0\)</span> and <span class="math notranslate nohighlight">\(\omega_{20} = \omega_0\)</span>. This simplifies the appearance of the solutions in Equations <a class="reference internal" href="#equation-eq25">(25)</a> and <a class="reference internal" href="#equation-eq26">(26)</a> to</p>
-<div class="math notranslate nohighlight" id="equation-eq29">
-<span class="eqno">(29)<a class="headerlink" href="#equation-eq29" title="Permalink to this equation">#</a></span>\[\omega_1 = \omega_0 \Gamma \sin\chi\]</div>
-<div class="math notranslate nohighlight" id="equation-eq30">
-<span class="eqno">(30)<a class="headerlink" href="#equation-eq30" title="Permalink to this equation">#</a></span>\[\omega_2 = \omega_0 \Gamma \cos\chi.\]</div>
-<p>Equation <a class="reference internal" href="#equation-eq27">(27)</a> can then be written as</p>
-<div class="math notranslate nohighlight" id="equation-eq31">
-<span class="eqno">(31)<a class="headerlink" href="#equation-eq31" title="Permalink to this equation">#</a></span>\[\boldsymbol{\omega}_{t} = \omega_0 \Gamma[\sin\chi {\bf b}_1+ \cos\chi {\bf b}_2] = \omega_0 \Gamma{\bf b}_{12} = \omega_{12} {\bf b}_{12},\]</div>
-<p>where <span class="math notranslate nohighlight">\({\bf b}_{12} = \sin\chi {\bf b}_1+ \cos\chi {\bf b}_2\)</span>; <span class="math notranslate nohighlight">\({\bf b}_{12}\)</span> is clearly a unit vector that is orthogonal to <span class="math notranslate nohighlight">\({\bf b}_3\)</span>. These developments concerning the transverse angular velocity vector will be useful in developments in Section 3 on the geometry of motion.</p>
-<p>From examining Equations <a class="reference internal" href="#equation-eq31">(31)</a> and <a class="reference internal" href="#equation-eq22">(22)</a>, it is evident that the spin rate has no influence on the magnitude of the transverse angular velocity. Further, it shows that the magnitude of the transverse angular velocity vector is a rescaling of <span class="math notranslate nohighlight">\(\omega_0\)</span> by <span class="math notranslate nohighlight">\(\Gamma\)</span>, a function of time that can either grow, decay, or fluctuate. <span class="math notranslate nohighlight">\({\bf b}_{12}\)</span> is a unit vector that rotates in the plane of <span class="math notranslate nohighlight">\({\bf b}_1\)</span> and <span class="math notranslate nohighlight">\({\bf b}_2\)</span> at the angular speed <span class="math notranslate nohighlight">\(\dot \chi\)</span>. As revealed by Equation <a class="reference internal" href="#equation-eq24">(24)</a>, <span class="math notranslate nohighlight">\(\dot \chi\)</span> may be positive or negative (assuming that <span class="math notranslate nohighlight">\(\omega_3\)</span> is always positive), depending on the relative values of <span class="math notranslate nohighlight">\(k_1\)</span> and <span class="math notranslate nohighlight">\(k_3\)</span>; if <span class="math notranslate nohighlight">\(k_3 &gt; k_1\)</span>, then <span class="math notranslate nohighlight">\({\bf b}_{12}\)</span> rotates negatively in the body, advancing from <span class="math notranslate nohighlight">\({\bf b}_1\)</span> to <span class="math notranslate nohighlight">\(-{\bf b}_2\)</span> and around; if <span class="math notranslate nohighlight">\(k_1 &gt; k_3\)</span>, then <span class="math notranslate nohighlight">\({\bf b}_{12}\)</span> rotates positively in the body, coinciding with <span class="math notranslate nohighlight">\({\bf b}_1\)</span> and then with <span class="math notranslate nohighlight">\({\bf b}_2\)</span> and so on. As the interest of this paper is in understanding the nutational stability, no attempt is made to obtain an analytical expression for <span class="math notranslate nohighlight">\(\chi\)</span>. Its value can be obtained numerically from Equation <a class="reference internal" href="#equation-eq23">(23)</a>.</p>
-<p>An expression for <span class="math notranslate nohighlight">\(\Gamma\)</span> can be developed involving the system’s transverse radius of gyration, <span class="math notranslate nohighlight">\(k_1\)</span>. If <span class="math notranslate nohighlight">\(I \triangleq m k_1^2\)</span>, <span class="math notranslate nohighlight">\(\Gamma\)</span> may be reformulated in Equation <a class="reference internal" href="#equation-eq22">(22)</a> as</p>
-<div class="math notranslate nohighlight">
-\[\Gamma = \frac{I(0)}{I}\text{exp}\bigg[ \int_{m(0)}^m \frac{\bigg[z_e^2 + \frac{R^2}{4}\bigg]}{k_1^2} \frac{\mathrm{d}m}{m}\bigg]\]</div>
-<p>Here, <span class="math notranslate nohighlight">\(R\)</span> is the constant radius of the exit plane while <span class="math notranslate nohighlight">\(k_1\)</span> and <span class="math notranslate nohighlight">\(z_e\)</span> can vary; these are parameters that are modeling constraints. Substituting for <span class="math notranslate nohighlight">\(\Gamma\)</span> into Equation <a class="reference internal" href="#equation-eq28">(28)</a> yields the following expression for the magnitude of the transverse angular velocity:</p>
-<div class="math notranslate nohighlight" id="equation-eq33">
-<span class="eqno">(32)<a class="headerlink" href="#equation-eq33" title="Permalink to this equation">#</a></span>\[\omega_{12} = \omega_{0} \bigg(\frac{I(0)}{I}\bigg) \text{exp}\bigg[ \int_{m(0)}^m \frac{\bigg[z_e^2 + \frac{R^2}{4}\bigg]}{k_1^2} \frac{\mathrm{d}m}{m}\bigg].\]</div>
-<p>Some of the effects of the variations in <span class="math notranslate nohighlight">\(z_e\)</span> and <span class="math notranslate nohighlight">\(k_1\)</span> on the transverse rate will be studied in the subsequent passage on variable mass cylinders. However, it should be evident that <span class="math notranslate nohighlight">\(\omega_{12}\)</span> can grow, decay, or fluctuate but under no circumstance is it constant for an axisymmetric variable mass system.</p>
-<p>Finally, the inertial angular velocity of an axisymmetric variable mass system can now be written as</p>
-<div class="math notranslate nohighlight" id="equation-eq32">
-<span class="eqno">(33)<a class="headerlink" href="#equation-eq32" title="Permalink to this equation">#</a></span>\[\boldsymbol{\omega} = \omega_0 \Gamma{\bf b}_{12} + \omega_3 {\bf b}_3,\]</div>
-<p>the form of which mimics the constant-mass rigid body case, for which <span class="math notranslate nohighlight">\(\Gamma = 1\)</span>.</p>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -650,21 +515,6 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-rate">Spin rate</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transverse-rate">Transverse rate</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
             
           </div>
           <footer class="bd-footer-content">
@@ -674,7 +524,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Angadh Nanjangud
 </p>
 
   </div>

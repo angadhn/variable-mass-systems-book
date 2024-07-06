@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Geometry of Torque-free Motion and Nutation Angle Solution &#8212; My sample book</title>
+    <title>Geometry of Torque-free Motion and Nutation Angle Solution &#8212; Variable Mass Systems</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'geometry-of-motion';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Uniform Burn" href="vms_uniform_burn.html" />
-    <link rel="prev" title="Constants" href="translation_curtis.html" />
+    <link rel="next" title="The Axisymmetric, Variable Mass Cylinder" href="axisymmetric_vm_cylinder.html" />
+    <link rel="prev" title="Equations of Motion and the Angular Velocity of an Axisymmetric Systems" href="axisymmetric_vms.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -155,8 +155,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/HQ_Final_Logo.png" class="logo__image only-light" alt="Variable Mass Systems - Home"/>
+    <script>document.write(`<img src="_static/HQ_Final_Logo.png" class="logo__image only-dark" alt="Variable Mass Systems - Home"/>`);</script>
   
   
 </a></div>
@@ -166,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Equations of Motion and the Angular Velocity of an Axisymmetric Systems
+                    Introduction
                 </a>
             </li>
         </ul>
@@ -185,9 +185,14 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Attitude Dynamics of Variable Mass Cylinders</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Axisymmetric Variable Mass Systems</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="axisymmetric_vms.html">Equations of Motion and the Angular Velocity of an Axisymmetric Systems</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Geometry of Torque-free Motion and Nutation Angle Solution</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Attitude Dynamics of Variable Mass Cylinders</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="axisymmetric_vm_cylinder.html">The Axisymmetric, Variable Mass Cylinder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vms_uniform_burn.html">Uniform Burn</a></li>
 
 
@@ -464,16 +469,16 @@ document.write(`
 <p>Retaining the assumption of steady and axisymmetric relative internal mass flow reduces Equation <a class="reference internal" href="#equation-eq34">(34)</a> to</p>
 <div class="math notranslate nohighlight" id="equation-eq35">
 <span class="eqno">(35)<a class="headerlink" href="#equation-eq35" title="Permalink to this equation">#</a></span>\[{\bf H}^* = \int_{V_0} \rho [{\bf p} \times (\boldsymbol{\omega} \times {\bf p}) ] \, \mathrm{d}V = {\bf I}^* \cdot \boldsymbol{\omega}.\]</div>
-<p>With the definitions of <span class="math notranslate nohighlight">\({\bf I}^*\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span> from Equations <a class="reference internal" href="intro.html#equation-eq3">(3)</a> and <a class="reference internal" href="intro.html#equation-eq4">(4)</a>, respectively, the component form of the angular momentum vector is</p>
+<p>With the definitions of <span class="math notranslate nohighlight">\({\bf I}^*\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span> from Equations <a class="reference internal" href="axisymmetric_vms.html#equation-eq3">(3)</a> and <a class="reference internal" href="axisymmetric_vms.html#equation-eq4">(4)</a>, respectively, the component form of the angular momentum vector is</p>
 <div class="math notranslate nohighlight" id="equation-eq36">
 <span class="eqno">(36)<a class="headerlink" href="#equation-eq36" title="Permalink to this equation">#</a></span>\[{\bf H}^* = I (\omega_1 {\bf b}_1  + \omega_2{\bf b}_2) + J \omega_3 {\bf b}_3\]</div>
 <p>or</p>
 <div class="math notranslate nohighlight" id="equation-eq37">
 <span class="eqno">(37)<a class="headerlink" href="#equation-eq37" title="Permalink to this equation">#</a></span>\[{\bf H}^* = I \boldsymbol{\omega}_{t} + J \omega_3 {\bf b}_3.\]</div>
-<p>Using the component form of <span class="math notranslate nohighlight">\(\boldsymbol{\omega}_{t}\)</span> from Equation <a class="reference internal" href="intro.html#equation-eq31">(31)</a> in Equation <a class="reference internal" href="#equation-eq37">(37)</a> gives</p>
+<p>Using the component form of <span class="math notranslate nohighlight">\(\boldsymbol{\omega}_{t}\)</span> from Equation <a class="reference internal" href="axisymmetric_vms.html#equation-eq31">(31)</a> in Equation <a class="reference internal" href="#equation-eq37">(37)</a> gives</p>
 <div class="math notranslate nohighlight" id="equation-eq38">
 <span class="eqno">(38)<a class="headerlink" href="#equation-eq38" title="Permalink to this equation">#</a></span>\[{\bf H}^* = I \omega_0 \Gamma {\bf b}_{12} + J \omega_3 {\bf b}_3\]</div>
-<p>Equation <a class="reference internal" href="#equation-eq38">(38)</a> gives an alternate form of the angular momentum of an axisymmetric variable mass system. Axisymmetric rigid systems (of constant or variable mass) are unique in that their angular momentum and angular velocity vectors are always in the same plane, evident by comparing Equations <a class="reference internal" href="intro.html#equation-eq32">(33)</a> to <a class="reference internal" href="#equation-eq38">(38)</a>; <span class="math notranslate nohighlight">\({\bf H}^*\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span> are in the same plane formed by <span class="math notranslate nohighlight">\({\bf b}_{12}\)</span> and <span class="math notranslate nohighlight">\({\bf b}_3\)</span> and this is shown in <a class="reference internal" href="#fig-4-3"><span class="std std-numref">Fig. 2</span></a>.</p>
+<p>Equation <a class="reference internal" href="#equation-eq38">(38)</a> gives an alternate form of the angular momentum of an axisymmetric variable mass system. Axisymmetric rigid systems (of constant or variable mass) are unique in that their angular momentum and angular velocity vectors are always in the same plane, evident by comparing Equations <a class="reference internal" href="axisymmetric_vms.html#equation-eq32">(33)</a> to <a class="reference internal" href="#equation-eq38">(38)</a>; <span class="math notranslate nohighlight">\({\bf H}^*\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span> are in the same plane formed by <span class="math notranslate nohighlight">\({\bf b}_{12}\)</span> and <span class="math notranslate nohighlight">\({\bf b}_3\)</span> and this is shown in <a class="reference internal" href="#fig-4-3"><span class="std std-numref">Fig. 2</span></a>.</p>
 <figure class="align-default" id="fig-4-3">
 <a class="reference internal image-reference" href="_images/Fig2.png"><img alt="_images/Fig2.png" src="_images/Fig2.png" style="height: 300px;" /></a>
 <figcaption>
@@ -524,20 +529,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="translation_curtis.html"
+       href="axisymmetric_vms.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Constants</p>
+        <p class="prev-next-title">Equations of Motion and the Angular Velocity of an Axisymmetric Systems</p>
       </div>
     </a>
     <a class="right-next"
-       href="vms_uniform_burn.html"
+       href="axisymmetric_vm_cylinder.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Uniform Burn</p>
+        <p class="prev-next-title">The Axisymmetric, Variable Mass Cylinder</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -557,7 +562,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Angadh Nanjangud
 </p>
 
   </div>
