@@ -1,0 +1,594 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Geometry of Torque-free Motion and Nutation Angle Solution &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'geometry-of-motion';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Uniform Burn" href="vms_uniform_burn.html" />
+    <link rel="prev" title="Constants" href="translation_curtis.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Equations of Motion and the Angular Velocity of an Axisymmetric Systems
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Orbital Dynamics of Variable Mass Cylinders</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="translation_curtis.html">Constants</a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Attitude Dynamics of Variable Mass Cylinders</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Geometry of Torque-free Motion and Nutation Angle Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vms_uniform_burn.html">Uniform Burn</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="vms_end_burn_normallized_quaternion.html">Define global variables</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="vms_radial_burn.html">Define the global physical parameters for the variable mass system</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="refs.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgeometry-of-motion.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/geometry-of-motion.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Geometry of Torque-free Motion and Nutation Angle Solution</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="geometry-of-torque-free-motion-and-nutation-angle-solution">
+<h1>Geometry of Torque-free Motion and Nutation Angle Solution<a class="headerlink" href="#geometry-of-torque-free-motion-and-nutation-angle-solution" title="Permalink to this heading">#</a></h1>
+<p>Explicit description of the inertia parameters coupled with the developments regarding the angular speeds from the previous section are sufficient to visualize the motion of the angular velocity vector from the body-fixed frame. However, it is also possible to visualize its motion in an inertially fixed reference frame which is the focus of this section. These developments are then used to study the variable mass cylinder problem in the following section.</p>
+<p>Exploiting the fact that the variable mass system’s angular momentum vector is fixed in inertial space <span id="id1">[<a class="reference internal" href="refs.html#id24" title="A. Nanjangud. On the rotational dynamics of variable mass systems. PhD thesis, University of California, Davis, 2016.">Nanjangud, 2016</a>, <a class="reference internal" href="refs.html#id23" title="A. Nanjangud and F.O. Eke. Angular momentum of free variable mass systems is partially conserved. Aerosp. Sci. Tech., 2018. doi:10.1016/j.ast.2018.03.003.">Nanjangud and Eke, 2018</a>]</span> enables us to visually study the angular velocity evolution from an inertial frame. The angular momentum of a general variable mass system can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq34">
+<span class="eqno">(34)<a class="headerlink" href="#equation-eq34" title="Permalink to this equation">#</a></span>\[{\bf H}^* = \int_{V_0} \rho [{\bf p} \times[{\bf v}_r + (\boldsymbol{\omega} \times {\bf p}) ]\, \mathrm{d}V.\]</div>
+<p>Retaining the assumption of steady and axisymmetric relative internal mass flow reduces Equation <a class="reference internal" href="#equation-eq34">(34)</a> to</p>
+<div class="math notranslate nohighlight" id="equation-eq35">
+<span class="eqno">(35)<a class="headerlink" href="#equation-eq35" title="Permalink to this equation">#</a></span>\[{\bf H}^* = \int_{V_0} \rho [{\bf p} \times (\boldsymbol{\omega} \times {\bf p}) ] \, \mathrm{d}V = {\bf I}^* \cdot \boldsymbol{\omega}.\]</div>
+<p>With the definitions of <span class="math notranslate nohighlight">\({\bf I}^*\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span> from Equations <a class="reference internal" href="intro.html#equation-eq3">(3)</a> and <a class="reference internal" href="intro.html#equation-eq4">(4)</a>, respectively, the component form of the angular momentum vector is</p>
+<div class="math notranslate nohighlight" id="equation-eq36">
+<span class="eqno">(36)<a class="headerlink" href="#equation-eq36" title="Permalink to this equation">#</a></span>\[{\bf H}^* = I (\omega_1 {\bf b}_1  + \omega_2{\bf b}_2) + J \omega_3 {\bf b}_3\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight" id="equation-eq37">
+<span class="eqno">(37)<a class="headerlink" href="#equation-eq37" title="Permalink to this equation">#</a></span>\[{\bf H}^* = I \boldsymbol{\omega}_{t} + J \omega_3 {\bf b}_3.\]</div>
+<p>Using the component form of <span class="math notranslate nohighlight">\(\boldsymbol{\omega}_{t}\)</span> from Equation <a class="reference internal" href="intro.html#equation-eq31">(31)</a> in Equation <a class="reference internal" href="#equation-eq37">(37)</a> gives</p>
+<div class="math notranslate nohighlight" id="equation-eq38">
+<span class="eqno">(38)<a class="headerlink" href="#equation-eq38" title="Permalink to this equation">#</a></span>\[{\bf H}^* = I \omega_0 \Gamma {\bf b}_{12} + J \omega_3 {\bf b}_3\]</div>
+<p>Equation <a class="reference internal" href="#equation-eq38">(38)</a> gives an alternate form of the angular momentum of an axisymmetric variable mass system. Axisymmetric rigid systems (of constant or variable mass) are unique in that their angular momentum and angular velocity vectors are always in the same plane, evident by comparing Equations <a class="reference internal" href="intro.html#equation-eq32">(33)</a> to <a class="reference internal" href="#equation-eq38">(38)</a>; <span class="math notranslate nohighlight">\({\bf H}^*\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span> are in the same plane formed by <span class="math notranslate nohighlight">\({\bf b}_{12}\)</span> and <span class="math notranslate nohighlight">\({\bf b}_3\)</span> and this is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:4.3</span></code>.</p>
+<p>In this figure, <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between <span class="math notranslate nohighlight">\({\bf H}^*\)</span> and <span class="math notranslate nohighlight">\({\bf b}_3\)</span>, and <span class="math notranslate nohighlight">\(\beta\)</span> is the angle between <span class="math notranslate nohighlight">\({\bf b}_3\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span>. These angles can be computed from the figure as</p>
+<div class="math notranslate nohighlight" id="equation-eq39">
+<span class="eqno">(39)<a class="headerlink" href="#equation-eq39" title="Permalink to this equation">#</a></span>\[\theta = \tan^{-1}\bigg(\frac{I \omega_{12}}{J \omega_3} \bigg) = \tan^{-1}\bigg(\frac{\Gamma k_1^2 \omega_{0}}{k_3^2 \omega_3} \bigg)\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eq40">
+<span class="eqno">(40)<a class="headerlink" href="#equation-eq40" title="Permalink to this equation">#</a></span>\[\beta = \tan^{-1}\bigg(\frac{\omega_{12}}{\omega_3} \bigg) = \tan^{-1} \bigg(\frac{\Gamma \omega_{0}}{\omega_3} \bigg).\]</div>
+<p>Evaluation of these angles <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> along with the solutions to the angular velocities permit a visual understanding of the motion of the body in both inertial space and the body-fixed coordinate system.</p>
+<p>In the case of axisymmetric rigid bodies of constant mass, <span class="math notranslate nohighlight">\(\Gamma = 1\)</span> and the spin rate and inertia scalars are constant. Consequently, in Equation <a class="reference internal" href="#equation-eq39">(39)</a> and <a class="reference internal" href="#equation-eq40">(40)</a>, both angles evaluate to constants and visualizing the motion of <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span> results in the formation of two cones: as it rotates about <span class="math notranslate nohighlight">\({\bf b}_3\)</span> and another as it rotates about <span class="math notranslate nohighlight">\({\bf n}_h\)</span>, a unit vector parallel to the inertially fixed <span class="math notranslate nohighlight">\({\bf H}^*\)</span>. The two cones are appropriately named the {\it body cone} and {\it space cone}, respectively.</p>
+<p>In the case of axisymmetric variable mass systems, angles <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are typically functions of time. The angles may grow or decay as dictated by the instantaneous values of the radii of gyration, <span class="math notranslate nohighlight">\(\Gamma\)</span>, and the spin rate. It is also possible, in the case of the same variable mass system, for <span class="math notranslate nohighlight">\(\beta\)</span> to exceed <span class="math notranslate nohighlight">\(\theta\)</span> at certain instants while it may not at certain other instants. <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:4.3</span></code> represents an instant where <span class="math notranslate nohighlight">\(\beta&gt;\theta\)</span>, which occurs when <span class="math notranslate nohighlight">\(k_3&gt;k_1\)</span>. Also, <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span> does not trace cones as it rotates about <span class="math notranslate nohighlight">\({\bf b}_3\)</span> and <span class="math notranslate nohighlight">\({\bf n}_h\)</span>. Thus, generic names are used for the surfaces it traces; in this document, they are referred to as the {\it body surface} and {\it space surface} (which reduce to the <code class="docutils literal notranslate"><span class="pre">{\it</span> <span class="pre">body</span> <span class="pre">cone}'</span> <span class="pre">and</span> </code>{\it space cone}’ for the limiting case of a constant mass rigid body, respectively).</p>
+<p>In the spacecraft dynamics literature, <span class="math notranslate nohighlight">\(\theta\)</span> is referred to as the nutation angle <span id="id2">[<a class="reference internal" href="refs.html#id19" title="M.H. Kaplan. Modern Spacecraft Dynamics and Control. Wiley, New York, 1976.">Kaplan, 1976</a>]</span>. In classical mechanics, <span class="math notranslate nohighlight">\(\theta\)</span> may also be identified as the second Euler angle <span id="id3">[<a class="reference internal" href="refs.html#id18" title="P.W. Likins. Elements of Engineering Mechanics. McGraw-Hill, New York, 1973.">Likins, 1973</a>]</span> and, thus, Equation <a class="reference internal" href="#equation-eq39">(39)</a> also gives the solution to said Euler angle. Growth in nutation angles results in a coning motion which is undesirable in spacecraft. Potential hazards of excessive nutation or coning motion might be poor initial conditions for subsequent mission operations, or possible loss of communications with a spacecraft due to incorrect pointing between its antenna and the base station. One such case of excessive nutation growth was observed in missions powered by the STAR-48 SRM <span id="id4">[<a class="reference internal" href="refs.html#id27" title="Jr. Cochran, J.E. and J.Y. Kang. Nonlinear stability analysis of the attitude motion of a spin-stabilized upper stage. Adv. Astronaut. Sci., 75(1):345-364, 1991.">Cochran and Kang, 1991</a>, <a class="reference internal" href="refs.html#id15" title="G.A. Flandro, W.K. Van Moorhem, R. Shorthill, K. Chen, and M. Woolsey. Fluid mechanics of spinning rockets. Technical Report TR-86-072, U.S. Air Force Rocket Propulsion Lab., Edwards AFB, CA, Jan 1987.">Flandro <em>et al.</em>, 1987</a>, <a class="reference internal" href="refs.html#id30" title="D.M. Halsmer and D.L Mingori. Nutational stability and passive control of spinning rockets with internal mass motion. J. Guid. Control Dyn., 18(5):1197-1203, 1995.">Halsmer and Mingori, 1995</a>, <a class="reference internal" href="refs.html#id26" title="R. X. Meyer. Convective instability in solid propellant rocket motors. In Adv. Astronaut. Sci., volume 54, 173. 1983. AAS Paper 83-368.">Meyer, 1983</a>, <a class="reference internal" href="refs.html#id29" title="D. Mingori and Y. Yam. Nutational stability of a spinning spacecraft with internal mass motion and axial thrust. In AIAA Astrodynamics Conference Proceedings, 367-375. Williamsburg, VA, 1986. AIAA Paper 86-2271.">Mingori and Yam, 1986</a>, <a class="reference internal" href="refs.html#id28" title="A.C. Or. Rotor-pendulum model for the perigee assist module nutation anomaly. J. Guid. Control Dyn., 15(2):297-303, 1992.">Or, 1992</a>]</span>. To mitigate this growth, an active nutation damper is used in these missions <span id="id5">[<a class="reference internal" href="refs.html#id31" title="E. Webster. Active nutation control for spinning solid motor upper stages. In American Institute of Aeronautics and Astronautics. 1985.">Webster, 1985</a>]</span>.</p>
+<p>Closed form expressions to <span class="math notranslate nohighlight">\(\theta\)</span> are available when the angular speeds are themselves available in closed form. These closed-form expressions are invaluable to not only evaluate stability but also for appropriate control strategy formulation to temper any instabilities. Solutions to the angular speeds are derived in the next section for a special class of variable mass systems: the axisymmetric variable mass cylinder. These closed form solutions are then utilized in constructing the body and space surfaces. The choice of cylindrical systems as an idealization is based on their use in several prior studies on rocket flight; Snyder and Warner <span id="id6">[<a class="reference internal" href="refs.html#id32" title="V.W. Snyder and G.G. Warner. A re-evaluation of jet damping. J. Spacecr. Rockets, 5:364-366, 1968.">Snyder and Warner, 1968</a>]</span> and Eke et al. <span id="id7">[<a class="reference internal" href="refs.html#id14" title="F.O. Eke, T.-C. Mao, and M. J. Morris. Free attitude motions of a spinning body with substantial mass loss. J. Appl. Mech., 71(2):190-194, 2004.">Eke <em>et al.</em>, 2004</a>, <a class="reference internal" href="refs.html#id12" title="F.O. Eke and S.-M. Wang. Attitude behavior of a variable mass cylinder. J. Appl. Mech., 62(4):935-940, 1995.">Eke and Wang, 1995</a>]</span> are some examples of investigators who have incorporated cylindrical propellant grains in their studies on the attitude motions of variable mass space vehicles.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="translation_curtis.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Constants</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="vms_uniform_burn.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Uniform Burn</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
