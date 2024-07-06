@@ -1,0 +1,881 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Define the global physical parameters for the variable mass system &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'vms_end_burn';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Equations of Motion and the Angular Velocity of an Axisymmetric Systems
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Orbital Dynamics of Variable Mass Cylinders</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="translation_curtis.html">Constants</a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Attitude Dynamics of Variable Mass Cylinders</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vms_uniform_burn.html">Uniform Burn</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="vms_end_burn_normallized_quaternion.html">Define global variables</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="vms_radial_burn.html">Define the global physical parameters for the variable mass system</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="refs.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fvms_end_burn.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/vms_end_burn.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Define the global physical parameters for the variable mass system</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Define the global physical parameters for the variable mass system</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-angular-rates">Initial angular rates</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-mass-properties">Initial mass properties</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quaternion-initial-conditions-representing-no-initial-rotation">Quaternion initial conditions (representing no initial rotation)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-initial-conditions">Combine initial conditions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-differential-equations-endburn">Define the differential equations (endburn)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-multiply-two-quaternions">Function to multiply two quaternions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#time-span-for-the-simulation">Time span for the simulation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-odes">Solve the ODEs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-the-integration-was-successful">Check if the integration was successful</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#print-the-final-time-to-check-if-it-reached-the-end-of-the-burn-time">Print the final time to check if it reached the end of the burn time</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-results">Extract results</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-quaternion-norm-and-check-for-violations">Compute the quaternion norm and check for violations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-endburn-to-compute-additional-variables-ext-over-time">Use endburn to compute additional variables (ext) over time</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-convert-quaternion-to-euler-angles-z-x-z-sequence">Function to convert quaternion to Euler angles (Z-X-Z sequence)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-euler-angles-from-quaternions">Extract Euler angles from quaternions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-results">Plot the results</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-angular-velocities">Plot angular velocities</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-euler-angles">Plot Euler angles</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-quaternions">Plot quaternions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-mass-and-moments-of-inertia">Plot mass and moments of inertia</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-t-handles-total-mechanical-energy-over-time">Plot the T-handle’s total mechanical energy over time</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-components-of-the-angular-momentum-about-the-mass-center-and-the-total-angular-momentum-over-time">Plot the components of the angular momentum about the mass center and the total angular momentum over time</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-convert-quaternion-to-rotation-matrix">Function to convert quaternion to rotation matrix</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage">Example usage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#assuming-qw-qx-qy-qz-are-the-quaternion-components-obtained-from-the-previous-solution">Assuming <code class="docutils literal notranslate"><span class="pre">qw</span></code>, <code class="docutils literal notranslate"><span class="pre">qx</span></code>, <code class="docutils literal notranslate"><span class="pre">qy</span></code>, <code class="docutils literal notranslate"><span class="pre">qz</span></code> are the quaternion components obtained from the previous solution</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-quaternion-norm-over-time">Plot the quaternion norm over time</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p>import numpy as np from scipy.integrate import solve_ivp import
+matplotlib.pyplot as plt from matplotlib.animation import FuncAnimation</p>
+<section class="tex2jax_ignore mathjax_ignore" id="define-the-global-physical-parameters-for-the-variable-mass-system">
+<h1>Define the global physical parameters for the variable mass system<a class="headerlink" href="#define-the-global-physical-parameters-for-the-variable-mass-system" title="Permalink to this heading">#</a></h1>
+<p>rho_ini = 1000 L = 1 # m h = L / 2 z0 = h R = 0.8 * L # m w0 = 0.2</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="initial-angular-rates">
+<h1>Initial angular rates<a class="headerlink" href="#initial-angular-rates" title="Permalink to this heading">#</a></h1>
+<p>w10 = 0 w20 = w0 w30 = 0.3</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="initial-mass-properties">
+<h1>Initial mass properties<a class="headerlink" href="#initial-mass-properties" title="Permalink to this heading">#</a></h1>
+<p>mf0 = np.pi * R<strong>2 * L * rho_ini # kg I10 = mf0 * (R</strong>2 / 4 + h<strong>2
+/ 3) # kg*m^2 I30 = mf0 * R</strong>2 / 2 # kg*m^2 Theta0 = 0 F0 = 0 tb = 100
+# s m_dot = -mf0 / tb z_dot = m_dot / (2 * rho_ini * np.pi * R**2)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="quaternion-initial-conditions-representing-no-initial-rotation">
+<h1>Quaternion initial conditions (representing no initial rotation)<a class="headerlink" href="#quaternion-initial-conditions-representing-no-initial-rotation" title="Permalink to this heading">#</a></h1>
+<p>q0 = [1, 0, 0, 0] # (w, x, y, z)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="combine-initial-conditions">
+<h1>Combine initial conditions<a class="headerlink" href="#combine-initial-conditions" title="Permalink to this heading">#</a></h1>
+<p>Y0 = [mf0, I10, I30, w10, w20, w30, Theta0, F0, z0] + q0</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="define-the-differential-equations-endburn">
+<h1>Define the differential equations (endburn)<a class="headerlink" href="#define-the-differential-equations-endburn" title="Permalink to this heading">#</a></h1>
+<p>def endburn(t, w): m, I1, I3, w1, w2, w3, Theta, F, z, qw, qx, qy, qz =
+w</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Mass varying terms
+md = m_dot
+I1d = md * (R**2 / 4 + z**2)
+I3d = md * R**2 / 2
+
+# Distance of mass center from exit plane
+ze = 2 * h - z
+
+# Equations of motion for the axisymmetric cylinder undergoing uniform burn
+w1d = (I1 - I3) * w2 * w3 / I1 - (I1d - md * (ze**2 + R**2 / 4)) * w1 / I1
+w2d = -(I1 - I3) * w1 * w3 / I1 - (I1d - md * (ze**2 + R**2 / 4)) * w2 / I1
+w3d = -(I3d - md * R**2 / 2) * w3 / I3
+Thetad = (1 - I3 / I1) * w3
+Fd = -(I1d - md * (ze**2 + R**2 / 4)) / I1
+zd = md / m * z
+
+# Quaternion derivative
+omega_quat = np.array([0, w1, w2, w3])
+quat = np.array([qw, qx, qy, qz])
+quat_dot = 0.5 * np.array(quat_mult(quat, omega_quat))
+
+wd = [md, I1d, I3d, w1d, w2d, w3d, Thetad, Fd, zd] + quat_dot.tolist()
+
+# other variables
+Gam = np.exp(F)
+ext = np.zeros(9)
+ext[0] = w0 * Gam * np.cos(Theta)
+ext[1] = -w0 * Gam * np.sin(Theta)
+ext[2] = I1
+ext[3] = I3
+ext[6] = ze
+ext[7] = np.sqrt(I1 / m)  # transverse radius of gyration
+ext[8] = np.sqrt(I3 / m)  # spin radius of gyration
+
+# nutation angle calculations
+H12 = I1 * w0 * Gam
+H3 = I3 * w3
+ext[4] = np.arctan(H12 / H3)
+ext[5] = np.arctan(w0 * Gam / w3)
+
+return wd, ext
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="function-to-multiply-two-quaternions">
+<h1>Function to multiply two quaternions<a class="headerlink" href="#function-to-multiply-two-quaternions" title="Permalink to this heading">#</a></h1>
+<p>def quat_mult(q, r): ““” Multiply two quaternions q and r. ““” w1, x1,
+y1, z1 = q w2, x2, y2, z2 = r return [ w1<em>w2 - x1</em>x2 - y1<em>y2 - z1</em>z2,
+w1<em>x2 + x1</em>w2 + y1<em>z2 - z1</em>y2, w1<em>y2 - x1</em>z2 + y1<em>w2 + z1</em>x2, w1<em>z2 +
+x1</em>y2 - y1<em>x2 + z1</em>w2 ]</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="time-span-for-the-simulation">
+<h1>Time span for the simulation<a class="headerlink" href="#time-span-for-the-simulation" title="Permalink to this heading">#</a></h1>
+<p>dt = 0.01 t_eval = np.arange(0, tb, dt)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="solve-the-odes">
+<h1>Solve the ODEs<a class="headerlink" href="#solve-the-odes" title="Permalink to this heading">#</a></h1>
+<p>sol = solve_ivp(lambda t, y: endburn(t, y)[0], [0, tb], Y0,
+t_eval=t_eval, atol=1e-9, rtol=1e-8)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="check-if-the-integration-was-successful">
+<h1>Check if the integration was successful<a class="headerlink" href="#check-if-the-integration-was-successful" title="Permalink to this heading">#</a></h1>
+<p>if sol.status == 0: print(“Integration successful.”) else:
+print(f”Integration failed with status {sol.status}: {sol.message}“)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="print-the-final-time-to-check-if-it-reached-the-end-of-the-burn-time">
+<h1>Print the final time to check if it reached the end of the burn time<a class="headerlink" href="#print-the-final-time-to-check-if-it-reached-the-end-of-the-burn-time" title="Permalink to this heading">#</a></h1>
+<p>print(f”Final time: {sol.t[-1]}“)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="extract-results">
+<h1>Extract results<a class="headerlink" href="#extract-results" title="Permalink to this heading">#</a></h1>
+<p>t = sol.t m = sol.y[0] I1 = sol.y[1] I3 = sol.y[2] omega1 =
+sol.y[3] omega2 = sol.y[4] omega3 = sol.y[5] chi = sol.y[6] F =
+sol.y[7] qw, qx, qy, qz = sol.y[8], sol.y[9], sol.y[10],
+sol.y[11]</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="compute-the-quaternion-norm-and-check-for-violations">
+<h1>Compute the quaternion norm and check for violations<a class="headerlink" href="#compute-the-quaternion-norm-and-check-for-violations" title="Permalink to this heading">#</a></h1>
+<p>quat_norm = np.sqrt(qw<strong>2 + qx</strong>2 + qy<strong>2 + qz</strong>2)
+norm_violation_indices = np.where(np.abs(quat_norm - 1) &gt; 1e-6)[0]</p>
+<p>if len(norm_violation_indices) &gt; 0: print(f”Quaternion constraint
+violated at time steps: {t[norm_violation_indices]}“) else:
+print(”Quaternion constraint satisfied throughout the simulation.”)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="use-endburn-to-compute-additional-variables-ext-over-time">
+<h1>Use endburn to compute additional variables (ext) over time<a class="headerlink" href="#use-endburn-to-compute-additional-variables-ext-over-time" title="Permalink to this heading">#</a></h1>
+<p>ext = np.zeros((len(t), 9)) for i in range(len(t)): _, ext[i, :] =
+endburn(t[i], sol.y[:, i])</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="function-to-convert-quaternion-to-euler-angles-z-x-z-sequence">
+<h1>Function to convert quaternion to Euler angles (Z-X-Z sequence)<a class="headerlink" href="#function-to-convert-quaternion-to-euler-angles-z-x-z-sequence" title="Permalink to this heading">#</a></h1>
+<p>def quat_to_euler_zxz(q): ““” Convert a quaternion to Euler angles
+(Z-X-Z sequence). ““” w, x, y, z = q # Compute the Euler angles psi =
+np.arctan2(2*(w<em>z + x</em>y), 1 - 2*(y<strong>2 + z</strong>2)) theta =
+np.arccos(2*(w<em>y - z</em>x)) phi = np.arctan2(2*(w<em>z + y</em>x), 1 - 2*(x<strong>2 +
+y</strong>2)) return psi, theta, phi</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="extract-euler-angles-from-quaternions">
+<h1>Extract Euler angles from quaternions<a class="headerlink" href="#extract-euler-angles-from-quaternions" title="Permalink to this heading">#</a></h1>
+<p>psi, theta, phi = np.zeros(len(qw)), np.zeros(len(qw)),
+np.zeros(len(qw)) for i in range(len(qw)): psi[i], theta[i],
+phi[i] = quat_to_euler_zxz([qw[i], qx[i], qy[i], qz[i]])</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="plot-the-results">
+<h1>Plot the results<a class="headerlink" href="#plot-the-results" title="Permalink to this heading">#</a></h1>
+<p>plt.figure(figsize=(12, 6))</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="plot-angular-velocities">
+<h1>Plot angular velocities<a class="headerlink" href="#plot-angular-velocities" title="Permalink to this heading">#</a></h1>
+<p>plt.subplot(4, 1, 1) plt.plot(sol.t, omega1, label=‘omega1’)
+plt.plot(sol.t, omega2, label=‘omega2’) plt.plot(sol.t, omega3,
+label=‘omega3’) plt.xlabel(‘Time (s)’) plt.ylabel(‘Angular Velocity
+(rad/s)’) plt.title(‘Angular Velocity vs Time’) plt.legend()</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="plot-euler-angles">
+<h1>Plot Euler angles<a class="headerlink" href="#plot-euler-angles" title="Permalink to this heading">#</a></h1>
+<p>plt.subplot(4, 1, 2) plt.plot(sol.t, psi, label=‘psi’) plt.plot(sol.t,
+theta, label=‘theta’) plt.plot(sol.t, phi, label=‘phi’) plt.xlabel(‘Time
+(s)’) plt.ylabel(‘Euler Angles (rad)’) plt.title(‘Euler Angles vs Time’)
+plt.legend()</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="plot-quaternions">
+<h1>Plot quaternions<a class="headerlink" href="#plot-quaternions" title="Permalink to this heading">#</a></h1>
+<p>plt.subplot(4, 1, 3) plt.plot(sol.t, qw, label=‘qw’) plt.plot(sol.t, qx,
+label=‘qx’) plt.plot(sol.t, qy, label=‘qy’) plt.plot(sol.t, qz,
+label=‘qz’) plt.xlabel(‘Time (s)’) plt.ylabel(‘Quaternion Components’)
+plt.title(‘Quaternion Components vs Time’) plt.legend()</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="plot-mass-and-moments-of-inertia">
+<h1>Plot mass and moments of inertia<a class="headerlink" href="#plot-mass-and-moments-of-inertia" title="Permalink to this heading">#</a></h1>
+<p>plt.subplot(4, 1, 4) plt.plot(sol.t, m, label=‘mass’) plt.plot(sol.t,
+I1, label=‘I1’) plt.plot(sol.t, I3, label=‘I3’) plt.xlabel(‘Time (s)’)
+plt.ylabel(‘Mass and Inertias’) plt.title(‘Mass and Moments of Inertia
+vs Time’) plt.legend()</p>
+<p>plt.tight_layout() plt.show()</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="plot-the-t-handles-total-mechanical-energy-over-time">
+<h1>Plot the T-handle’s total mechanical energy over time<a class="headerlink" href="#plot-the-t-handles-total-mechanical-energy-over-time" title="Permalink to this heading">#</a></h1>
+<p>E = 0.5 * (I1 * omega1<strong>2 + I1 * omega2</strong>2 + I3 * omega3**2)</p>
+<p>plt.figure() plt.plot(sol.t, E, ‘-b’, linewidth=2) plt.xlabel(‘Time
+(s)’) plt.ylabel(‘Total mechanical energy (J)’) plt.ylim([min(E) *
+0.8, max(E) * 1.2]) # Set fixed y-axis limits plt.title(‘Total
+Mechanical Energy vs Time’) plt.show()</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="plot-the-components-of-the-angular-momentum-about-the-mass-center-and-the-total-angular-momentum-over-time">
+<h1>Plot the components of the angular momentum about the mass center and the total angular momentum over time<a class="headerlink" href="#plot-the-components-of-the-angular-momentum-about-the-mass-center-and-the-total-angular-momentum-over-time" title="Permalink to this heading">#</a></h1>
+<p>H1 = I1 * omega1 # kg-m^2/s H2 = I1 * omega2 # kg-m^2/s H3 = I3 *
+omega3 # kg-m^2/s H = np.sqrt(H1<strong>2 + H2</strong>2 + H3**2) # kg-m^2/s</p>
+<p>plt.figure() plt.plot(sol.t, H1, label=‘H e1’) plt.plot(sol.t, H2,
+label=‘H e2’) plt.plot(sol.t, H3, label=‘H e3’) plt.plot(sol.t, H,
+label=‘||H||’) plt.xlabel(‘Time (s)’) plt.ylabel(‘Angular momentum
+(kg-m^2/s)’) plt.title(‘Angular Momentum Components vs Time’)
+plt.legend() plt.show()</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="function-to-convert-quaternion-to-rotation-matrix">
+<h1>Function to convert quaternion to rotation matrix<a class="headerlink" href="#function-to-convert-quaternion-to-rotation-matrix" title="Permalink to this heading">#</a></h1>
+<p>def quat_to_rot_matrix(q): ““” Convert a quaternion q to a rotation
+matrix. ““” w, x, y, z = q return np.array([ [1 - 2*(y<strong>2 + z</strong>2),
+2*(x<em>y - z</em>w), 2*(x<em>z + y*w)], [2</em>(x<em>y + z</em>w), 1 - 2*(x<strong>2 + z</strong>2),
+2*(y<em>z - x*w)], [2</em>(x<em>z - y</em>w), 2*(y<em>z + x</em>w), 1 - 2*(x<strong>2 + y</strong>2)]
+])</p>
+<p>def animate_t_handle_quat(qw, qx, qy, qz, dt): # Specify dimensions
+for the T-handle LAG = 0.5 # cm LBC = 4 # cm LAD = 2 # cm</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Initialize arrays to store the T-handle&#39;s orientation and key points
+e1 = np.zeros((3, len(qw)))
+e2 = np.zeros((3, len(qw)))
+e3 = np.zeros((3, len(qw)))
+xA, yA, zA = np.zeros(len(qw)), np.zeros(len(qw)), np.zeros(len(qw))
+xB, yB, zB = np.zeros(len(qw)), np.zeros(len(qw)), np.zeros(len(qw))
+xC, yC, zC = np.zeros(len(qw)), np.zeros(len(qw)), np.zeros(len(qw))
+xD, yD, zD = np.zeros(len(qw)), np.zeros(len(qw)), np.zeros(len(qw))
+
+# Calculate the orientation of the T-handle over time
+for k in range(len(qw)):
+    q = [qw[k], qx[k], qy[k], qz[k]]
+    R = quat_to_rot_matrix(q)
+    e1[:, k] = R @ np.array([1, 0, 0])
+    e2[:, k] = R @ np.array([0, 1, 0])
+    e3[:, k] = R @ np.array([0, 0, 1])
+    xA[k] = -LAG * e2[0, k]
+    yA[k] = -LAG * e2[1, k]
+    zA[k] = -LAG * e2[2, k]
+    xB[k] = xA[k] + LBC / 2 * e1[0, k]
+    yB[k] = yA[k] + LBC / 2 * e1[1, k]
+    zB[k] = zA[k] + LBC / 2 * e1[2, k]
+    xC[k] = xA[k] - LBC / 2 * e1[0, k]
+    yC[k] = yA[k] - LBC / 2 * e1[1, k]
+    zC[k] = zA[k] - LBC / 2 * e1[2, k]
+    xD[k] = xA[k] + LAD * e2[0, k]
+    yD[k] = yA[k] + LAD * e2[1, k]
+    zD[k] = zA[k] + LAD * e2[2, k]
+
+# Set up the figure window
+fig = plt.figure()
+ax = fig.add_subplot(111, projection=&#39;3d&#39;)
+ax.set_xlabel(&#39;X (cm)&#39;)
+ax.set_ylabel(&#39;Y (cm)&#39;)
+ax.set_zlabel(&#39;Z (cm)&#39;)
+ax.set_xlim([-LBC, LBC])
+ax.set_ylim([-LBC, LBC])
+ax.set_zlim([-LAD, LAD])
+ax.set_title(&#39;T-handle Animation&#39;)
+
+# Draw the T-handle
+AD, = ax.plot([xA[0], xD[0]], [yA[0], yD[0]], [zA[0], zD[0]], &#39;k-&#39;, linewidth=5)
+BC, = ax.plot([xB[0], xC[0]], [yB[0], yC[0]], [zB[0], zC[0]], &#39;k-&#39;, linewidth=5)
+
+# Animate the T-handle&#39;s motion by updating the figure with its current orientation
+def update(k):
+    AD.set_data([xA[k], xD[k]], [yA[k], yD[k]])
+    AD.set_3d_properties([zA[k], zD[k]])
+    BC.set_data([xB[k], xC[k]], [yB[k], yC[k]])
+    BC.set_3d_properties([zB[k], zC[k]])
+    return AD, BC,
+
+ani = FuncAnimation(fig, update, frames=len(qw), interval=dt * 1000, blit=True)
+plt.show()
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="example-usage">
+<h1>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="assuming-qw-qx-qy-qz-are-the-quaternion-components-obtained-from-the-previous-solution">
+<h1>Assuming <code class="docutils literal notranslate"><span class="pre">qw</span></code>, <code class="docutils literal notranslate"><span class="pre">qx</span></code>, <code class="docutils literal notranslate"><span class="pre">qy</span></code>, <code class="docutils literal notranslate"><span class="pre">qz</span></code> are the quaternion components obtained from the previous solution<a class="headerlink" href="#assuming-qw-qx-qy-qz-are-the-quaternion-components-obtained-from-the-previous-solution" title="Permalink to this heading">#</a></h1>
+<p>animate_t_handle_quat(qw, qx, qy, qz, dt)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="plot-the-quaternion-norm-over-time">
+<h1>Plot the quaternion norm over time<a class="headerlink" href="#plot-the-quaternion-norm-over-time" title="Permalink to this heading">#</a></h1>
+<p>plt.figure(figsize=(10, 6)) plt.plot(t, quat_norm, label=‘Quaternion
+Norm’) plt.axhline(y=1.0, color=‘r’, linestyle=‘–’, label=‘Ideal Norm
+(1.0)’) plt.xlabel(‘Time (s)’) plt.ylabel(‘Quaternion Norm’)
+plt.ylim([0.99, 1.01]) # Adjust y-limits for better visualization
+plt.title(‘Quaternion Norm vs Time’) plt.legend() plt.show()</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Define the global physical parameters for the variable mass system</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-angular-rates">Initial angular rates</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-mass-properties">Initial mass properties</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quaternion-initial-conditions-representing-no-initial-rotation">Quaternion initial conditions (representing no initial rotation)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-initial-conditions">Combine initial conditions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-differential-equations-endburn">Define the differential equations (endburn)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-multiply-two-quaternions">Function to multiply two quaternions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#time-span-for-the-simulation">Time span for the simulation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-odes">Solve the ODEs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-the-integration-was-successful">Check if the integration was successful</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#print-the-final-time-to-check-if-it-reached-the-end-of-the-burn-time">Print the final time to check if it reached the end of the burn time</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-results">Extract results</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-quaternion-norm-and-check-for-violations">Compute the quaternion norm and check for violations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-endburn-to-compute-additional-variables-ext-over-time">Use endburn to compute additional variables (ext) over time</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-convert-quaternion-to-euler-angles-z-x-z-sequence">Function to convert quaternion to Euler angles (Z-X-Z sequence)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-euler-angles-from-quaternions">Extract Euler angles from quaternions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-results">Plot the results</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-angular-velocities">Plot angular velocities</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-euler-angles">Plot Euler angles</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-quaternions">Plot quaternions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-mass-and-moments-of-inertia">Plot mass and moments of inertia</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-t-handles-total-mechanical-energy-over-time">Plot the T-handle’s total mechanical energy over time</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-components-of-the-angular-momentum-about-the-mass-center-and-the-total-angular-momentum-over-time">Plot the components of the angular momentum about the mass center and the total angular momentum over time</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-convert-quaternion-to-rotation-matrix">Function to convert quaternion to rotation matrix</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage">Example usage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#assuming-qw-qx-qy-qz-are-the-quaternion-components-obtained-from-the-previous-solution">Assuming <code class="docutils literal notranslate"><span class="pre">qw</span></code>, <code class="docutils literal notranslate"><span class="pre">qx</span></code>, <code class="docutils literal notranslate"><span class="pre">qy</span></code>, <code class="docutils literal notranslate"><span class="pre">qz</span></code> are the quaternion components obtained from the previous solution</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-quaternion-norm-over-time">Plot the quaternion norm over time</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
