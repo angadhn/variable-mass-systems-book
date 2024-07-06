@@ -7,9 +7,13 @@ parts:
   - caption: Orbital Dynamics of Variable Mass Cylinders
     chapters:
     - file: translation_curtis
+  - caption: Axisymmetric Variable Mass Systems
+    chapters:
+    - file: axisymmetric_vms
+    - file: geometry-of-motion
   - caption: Attitude Dynamics of Variable Mass Cylinders
     chapters:
-    - file: geometry-of-motion    
+    - file: axisymmetric_vm_cylinder
     - file: vms_uniform_burn
     - file: vms_end_burn_normallized_quaternion
     - file: vms_radial_burn
