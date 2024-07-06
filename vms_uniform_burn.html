@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'vms_uniform_burn';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -192,17 +194,6 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="axisymmetric_vm_cylinder.html">The Axisymmetric, Variable Mass Cylinder</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Uniform Burn</a></li>
-
-
-
-
-
-
-
-
-
-
-
 
 <li class="toctree-l1"><a class="reference internal" href="vms_end_burn_normallized_quaternion.html">Define global variables</a></li>
 
@@ -456,19 +447,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Uniform Burn</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-global-physical-parameters-for-the-variable-mass-system">Define the global physical parameters for the variable mass system</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-angular-rates">Initial angular rates</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-mass-properties">Initial mass properties</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quaternion-initial-conditions-representing-no-initial-rotation">Quaternion initial conditions (representing no initial rotation)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-initial-conditions">Combine initial conditions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-differential-equations">Define the differential equations</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-multiply-two-quaternions">Function to multiply two quaternions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#time-span-for-the-simulation">Time span for the simulation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-odes">Solve the ODEs</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-convert-quaternion-to-euler-angles-z-x-z-sequence">Function to convert quaternion to Euler angles (Z-X-Z sequence)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-euler-angles-from-quaternions">Extract Euler angles from quaternions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-results">Plot the results</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Uniform Burn</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theory">Theory</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-results">Simulation Results</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-global-physical-parameters-for-the-variable-mass-system">Define the global physical parameters for the variable mass system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-angular-rates">Initial angular rates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-mass-properties">Initial mass properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quaternion-initial-conditions-representing-no-initial-rotation">Quaternion initial conditions (representing no initial rotation)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-initial-conditions">Combine initial conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-differential-equations">Define the differential equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-multiply-two-quaternions">Function to multiply two quaternions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-span-for-the-simulation">Time span for the simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-odes">Solve the ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-convert-quaternion-to-euler-angles-z-x-z-sequence">Function to convert quaternion to Euler angles (Z-X-Z sequence)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-euler-angles-from-quaternions">Extract Euler angles from quaternions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-results">Plot the results</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -483,6 +480,37 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="uniform-burn">
 <h1>Uniform Burn<a class="headerlink" href="#uniform-burn" title="Permalink to this heading">#</a></h1>
+<section id="theory">
+<h2>Theory<a class="headerlink" href="#theory" title="Permalink to this heading">#</a></h2>
+<p>A uniformly burning cylinder is one in which the mass of the system varies as a function of time while the dimensions of the unburned portion of the cylinder are the same as that of the original cylinder; radius and length of the cylinder are both assumed to be <span class="math notranslate nohighlight">\(1\)</span>m. Thus, its instantaneous central moment of inertia scalars are</p>
+<div class="math notranslate nohighlight" id="equation-eq41">
+<span class="eqno">(41)<a class="headerlink" href="#equation-eq41" title="Permalink to this equation">#</a></span>\[I = m \bigg(\frac{R^2}{4} + \frac{h^2}{3}\bigg)\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eq42">
+<span class="eqno">(42)<a class="headerlink" href="#equation-eq42" title="Permalink to this equation">#</a></span>\[J = m\frac{R^2}{2}.\]</div>
+<p>This is an example of a variable mass system where the radii of gyration are constant where <span class="math notranslate nohighlight">\(k_1^2 = \frac{R^2}{4} + \frac{h^2}{3}\)</span> and <span class="math notranslate nohighlight">\(k_3^2 = \frac{R^2}{4}\)</span>. The time derivatives of the moment of inertia are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\dot I &amp;= \dot m\left(\frac{R^2}{4} + \frac{h^2}{3}\right) \\
+\dot J &amp;= \dot m \frac{R^2}{2}
+\end{aligned}\end{split}\]</div>
+<p>The resulting spin and transverse rates are obtained from Equations <a class="reference internal" href="axisymmetric_vms.html#equation-eq17">(17)</a> and <a class="reference internal" href="axisymmetric_vms.html#equation-eq28">(28)</a> as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\omega_3 &amp;= \omega_{30} \\
+\omega_{12} &amp;= \omega_0 \left(\frac{m}{m_0}\right)^{\frac{2h^2}{3k_1^2}} = \omega_0 \Gamma(t)\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Gamma(t) \triangleq \left(\frac{m}{m_0}\right)^{\frac{2h^2}{3k_1^2}}\)</span>. Prior to the start of the burn <span class="math notranslate nohighlight">\(m = m_0\)</span> so <span class="math notranslate nohighlight">\(\Gamma = 1\)</span>. As the burn proceeds <span class="math notranslate nohighlight">\(\Gamma\)</span> decreases with time but is always non-negative. Thus, the transverse angular rate also decreases with time for a uniformly burning cylinder. Then Equation <a class="reference internal" href="geometry-of-motion.html#equation-eq39">(39)</a> gives the nutation angle for this system</p>
+<div class="math notranslate nohighlight" id="equation-eq43">
+<span class="eqno">(43)<a class="headerlink" href="#equation-eq43" title="Permalink to this equation">#</a></span>\[\theta(t) = \tan^{-1}( K \Gamma(t) ),\]</div>
+<p>where <span class="math notranslate nohighlight">\(K = \frac{k_1^2 \omega_0}{k_3^2 \omega_{30}}\)</span>. Since <span class="math notranslate nohighlight">\(K\)</span> is constant and <span class="math notranslate nohighlight">\(\Gamma(t)\)</span> is decreasing with time, the nutation angle is also a decreasing parameter with time. This reduction in the transverse oscillations of a variable mass system by the exhaust gas is referred to as jet damping of a rocket.</p>
+<p>The rotation of <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span> about <span class="math notranslate nohighlight">\({\bf b}_3\)</span> and <span class="math notranslate nohighlight">\({\bf n}_h\)</span> was discussed in the earlier section on generic axisymmetric variable mass systems. Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-4-5</span></code> visualizes the first of these rotations for the uniformly burning cylinder, assuming <span class="math notranslate nohighlight">\(k_3 &gt; k_1\)</span>. The angular velocity vector traces a spiral in the transverse plane as it rotates about the symmetry axis <span class="math notranslate nohighlight">\({\bf b}_3\)</span> in a counter-clockwise direction and eventually converges to the symmetry axis.</p>
+<p>The rotation of <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span> in the inertial space (i.e., about <span class="math notranslate nohighlight">\({\bf n}_h\)</span> since it is inertially fixed) requires knowledge of the angle, <span class="math notranslate nohighlight">\(\beta\)</span>, in Equation <a class="reference internal" href="geometry-of-motion.html#equation-eq40">(40)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-eq44">
+<span class="eqno">(44)<a class="headerlink" href="#equation-eq44" title="Permalink to this equation">#</a></span>\[\beta = \tan^{-1}\bigg(\frac{\omega_{0}}{\omega_{30}} \left(\frac{m}{m(0)}\right)^{\frac{2h^2}{3k_1^2}} \bigg).\]</div>
+<p>This angle also decays with time for the uniformly burning cylinder, effectively reducing the system’s motion to that of simple or pure spin, i.e., a motion in which the angular velocity and angular momentum vectors are parallel. The above expressions of <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(\beta\)</span> along with the angular velocity permit the construction of the space surface as shown in Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-4-6</span></code>. Note that <span class="math notranslate nohighlight">\({\bf n}_f\)</span>, <span class="math notranslate nohighlight">\({\bf n}_g\)</span>, and <span class="math notranslate nohighlight">\({\bf n}_h\)</span> represent a dextral set of unit vectors which are inertially fixed.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="simulation-results">
+<h1>Simulation Results<a class="headerlink" href="#simulation-results" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -499,9 +527,8 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
 </div>
 </div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="define-the-global-physical-parameters-for-the-variable-mass-system">
-<h1>Define the global physical parameters for the variable mass system<a class="headerlink" href="#define-the-global-physical-parameters-for-the-variable-mass-system" title="Permalink to this heading">#</a></h1>
+<section id="define-the-global-physical-parameters-for-the-variable-mass-system">
+<h2>Define the global physical parameters for the variable mass system<a class="headerlink" href="#define-the-global-physical-parameters-for-the-variable-mass-system" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho_ini</span> <span class="o">=</span> <span class="mi">1020</span>
@@ -517,8 +544,8 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="initial-angular-rates">
-<h1>Initial angular rates<a class="headerlink" href="#initial-angular-rates" title="Permalink to this heading">#</a></h1>
+<section id="initial-angular-rates">
+<h2>Initial angular rates<a class="headerlink" href="#initial-angular-rates" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w10</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># rad/s</span>
@@ -529,8 +556,8 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="initial-mass-properties">
-<h1>Initial mass properties<a class="headerlink" href="#initial-mass-properties" title="Permalink to this heading">#</a></h1>
+<section id="initial-mass-properties">
+<h2>Initial mass properties<a class="headerlink" href="#initial-mass-properties" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mf0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">L</span> <span class="o">*</span> <span class="n">rho_ini</span>  <span class="c1"># kg</span>
@@ -544,8 +571,8 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="quaternion-initial-conditions-representing-no-initial-rotation">
-<h1>Quaternion initial conditions (representing no initial rotation)<a class="headerlink" href="#quaternion-initial-conditions-representing-no-initial-rotation" title="Permalink to this heading">#</a></h1>
+<section id="quaternion-initial-conditions-representing-no-initial-rotation">
+<h2>Quaternion initial conditions (representing no initial rotation)<a class="headerlink" href="#quaternion-initial-conditions-representing-no-initial-rotation" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># (w, x, y, z)</span>
@@ -554,8 +581,8 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="combine-initial-conditions">
-<h1>Combine initial conditions<a class="headerlink" href="#combine-initial-conditions" title="Permalink to this heading">#</a></h1>
+<section id="combine-initial-conditions">
+<h2>Combine initial conditions<a class="headerlink" href="#combine-initial-conditions" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y0</span> <span class="o">=</span> <span class="p">[</span><span class="n">mf0</span><span class="p">,</span> <span class="n">I10</span><span class="p">,</span> <span class="n">I30</span><span class="p">,</span> <span class="n">w10</span><span class="p">,</span> <span class="n">w20</span><span class="p">,</span> <span class="n">w30</span><span class="p">,</span> <span class="n">chi0</span><span class="p">,</span> <span class="n">Fd0</span><span class="p">]</span> <span class="o">+</span> <span class="n">q0</span>
@@ -564,8 +591,8 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="define-the-differential-equations">
-<h1>Define the differential equations<a class="headerlink" href="#define-the-differential-equations" title="Permalink to this heading">#</a></h1>
+<section id="define-the-differential-equations">
+<h2>Define the differential equations<a class="headerlink" href="#define-the-differential-equations" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">uniburn</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
@@ -591,8 +618,8 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="function-to-multiply-two-quaternions">
-<h1>Function to multiply two quaternions<a class="headerlink" href="#function-to-multiply-two-quaternions" title="Permalink to this heading">#</a></h1>
+<section id="function-to-multiply-two-quaternions">
+<h2>Function to multiply two quaternions<a class="headerlink" href="#function-to-multiply-two-quaternions" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quat_mult</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
@@ -609,8 +636,8 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="time-span-for-the-simulation">
-<h1>Time span for the simulation<a class="headerlink" href="#time-span-for-the-simulation" title="Permalink to this heading">#</a></h1>
+<section id="time-span-for-the-simulation">
+<h2>Time span for the simulation<a class="headerlink" href="#time-span-for-the-simulation" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="mf">0.01</span>
@@ -620,8 +647,8 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="solve-the-odes">
-<h1>Solve the ODEs<a class="headerlink" href="#solve-the-odes" title="Permalink to this heading">#</a></h1>
+<section id="solve-the-odes">
+<h2>Solve the ODEs<a class="headerlink" href="#solve-the-odes" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">uniburn</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">tb</span><span class="p">],</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">t_eval</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-9</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">)</span>
@@ -683,8 +710,8 @@ Final time: 99.0
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="function-to-convert-quaternion-to-euler-angles-z-x-z-sequence">
-<h1>Function to convert quaternion to Euler angles (Z-X-Z sequence)<a class="headerlink" href="#function-to-convert-quaternion-to-euler-angles-z-x-z-sequence" title="Permalink to this heading">#</a></h1>
+<section id="function-to-convert-quaternion-to-euler-angles-z-x-z-sequence">
+<h2>Function to convert quaternion to Euler angles (Z-X-Z sequence)<a class="headerlink" href="#function-to-convert-quaternion-to-euler-angles-z-x-z-sequence" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quat_to_euler_zxz</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
@@ -702,8 +729,8 @@ Final time: 99.0
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="extract-euler-angles-from-quaternions">
-<h1>Extract Euler angles from quaternions<a class="headerlink" href="#extract-euler-angles-from-quaternions" title="Permalink to this heading">#</a></h1>
+<section id="extract-euler-angles-from-quaternions">
+<h2>Extract Euler angles from quaternions<a class="headerlink" href="#extract-euler-angles-from-quaternions" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">))</span>
@@ -714,8 +741,8 @@ Final time: 99.0
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="plot-the-results">
-<h1>Plot the results<a class="headerlink" href="#plot-the-results" title="Permalink to this heading">#</a></h1>
+<section id="plot-the-results">
+<h2>Plot the results<a class="headerlink" href="#plot-the-results" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
@@ -893,6 +920,7 @@ Final time: 99.0
 </div>
 </div>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -957,19 +985,25 @@ Final time: 99.0
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Uniform Burn</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-global-physical-parameters-for-the-variable-mass-system">Define the global physical parameters for the variable mass system</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-angular-rates">Initial angular rates</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-mass-properties">Initial mass properties</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quaternion-initial-conditions-representing-no-initial-rotation">Quaternion initial conditions (representing no initial rotation)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-initial-conditions">Combine initial conditions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-differential-equations">Define the differential equations</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-multiply-two-quaternions">Function to multiply two quaternions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#time-span-for-the-simulation">Time span for the simulation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-odes">Solve the ODEs</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-convert-quaternion-to-euler-angles-z-x-z-sequence">Function to convert quaternion to Euler angles (Z-X-Z sequence)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-euler-angles-from-quaternions">Extract Euler angles from quaternions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-results">Plot the results</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Uniform Burn</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theory">Theory</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-results">Simulation Results</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-global-physical-parameters-for-the-variable-mass-system">Define the global physical parameters for the variable mass system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-angular-rates">Initial angular rates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-mass-properties">Initial mass properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quaternion-initial-conditions-representing-no-initial-rotation">Quaternion initial conditions (representing no initial rotation)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-initial-conditions">Combine initial conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-differential-equations">Define the differential equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-multiply-two-quaternions">Function to multiply two quaternions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-span-for-the-simulation">Time span for the simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-odes">Solve the ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-convert-quaternion-to-euler-angles-z-x-z-sequence">Function to convert quaternion to Euler angles (Z-X-Z sequence)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-euler-angles-from-quaternions">Extract Euler angles from quaternions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-results">Plot the results</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
