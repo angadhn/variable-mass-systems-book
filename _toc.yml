@@ -1,0 +1,17 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Orbital Dynamics of Variable Mass Cylinders
+    chapters:
+    - file: translation_curtis
+  - caption: Attitude Dynamics of Variable Mass Cylinders
+    chapters:
+    - file: vms_uniform_burn
+    - file: vms_end_burn_normallized_quaternion
+    - file: vms_radial_burn
+  - caption: References
+    chapters:
+    - file: refs
