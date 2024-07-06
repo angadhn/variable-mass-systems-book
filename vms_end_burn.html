@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Define the global physical parameters for the variable mass system &#8212; Variable Mass Systems</title>
+    <title>End Burn &#8212; Variable Mass Systems</title>
   
   
   
@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'vms_end_burn';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -218,31 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="vms_radial_burn.html">Define the global physical parameters for the variable mass system</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="vms_radial_burn.html">Uniform Burn</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
@@ -433,7 +411,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Define the global physical parameters for the variable mass system</h1>
+    <h1>End Burn</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -443,33 +421,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Define the global physical parameters for the variable mass system</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-angular-rates">Initial angular rates</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-mass-properties">Initial mass properties</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quaternion-initial-conditions-representing-no-initial-rotation">Quaternion initial conditions (representing no initial rotation)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-initial-conditions">Combine initial conditions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-differential-equations-endburn">Define the differential equations (endburn)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-multiply-two-quaternions">Function to multiply two quaternions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#time-span-for-the-simulation">Time span for the simulation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-odes">Solve the ODEs</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-the-integration-was-successful">Check if the integration was successful</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#print-the-final-time-to-check-if-it-reached-the-end-of-the-burn-time">Print the final time to check if it reached the end of the burn time</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-results">Extract results</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-quaternion-norm-and-check-for-violations">Compute the quaternion norm and check for violations</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-endburn-to-compute-additional-variables-ext-over-time">Use endburn to compute additional variables (ext) over time</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-convert-quaternion-to-euler-angles-z-x-z-sequence">Function to convert quaternion to Euler angles (Z-X-Z sequence)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-euler-angles-from-quaternions">Extract Euler angles from quaternions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-results">Plot the results</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-angular-velocities">Plot angular velocities</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-euler-angles">Plot Euler angles</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-quaternions">Plot quaternions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-mass-and-moments-of-inertia">Plot mass and moments of inertia</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-t-handles-total-mechanical-energy-over-time">Plot the T-handle’s total mechanical energy over time</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-components-of-the-angular-momentum-about-the-mass-center-and-the-total-angular-momentum-over-time">Plot the components of the angular momentum about the mass center and the total angular momentum over time</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-convert-quaternion-to-rotation-matrix">Function to convert quaternion to rotation matrix</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage">Example usage</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#assuming-qw-qx-qy-qz-are-the-quaternion-components-obtained-from-the-previous-solution">Assuming <code class="docutils literal notranslate"><span class="pre">qw</span></code>, <code class="docutils literal notranslate"><span class="pre">qx</span></code>, <code class="docutils literal notranslate"><span class="pre">qy</span></code>, <code class="docutils literal notranslate"><span class="pre">qz</span></code> are the quaternion components obtained from the previous solution</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-quaternion-norm-over-time">Plot the quaternion norm over time</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">End Burn</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theory">Theory</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-results">Simulation Results</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-global-physical-parameters-for-the-variable-mass-system">Define the global physical parameters for the variable mass system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-angular-rates">Initial angular rates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-mass-properties">Initial mass properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quaternion-initial-conditions-representing-no-initial-rotation">Quaternion initial conditions (representing no initial rotation)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-initial-conditions">Combine initial conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-differential-equations">Define the differential equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-multiply-two-quaternions">Function to multiply two quaternions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-span-for-the-simulation">Time span for the simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-odes">Solve the ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-convert-quaternion-to-euler-angles-z-x-z-sequence">Function to convert quaternion to Euler angles (Z-X-Z sequence)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-euler-angles-from-quaternions">Extract Euler angles from quaternions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-results">Plot the results</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -482,268 +452,542 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>import numpy as np from scipy.integrate import solve_ivp import
-matplotlib.pyplot as plt from matplotlib.animation import FuncAnimation</p>
-<section class="tex2jax_ignore mathjax_ignore" id="define-the-global-physical-parameters-for-the-variable-mass-system">
-<h1>Define the global physical parameters for the variable mass system<a class="headerlink" href="#define-the-global-physical-parameters-for-the-variable-mass-system" title="Permalink to this heading">#</a></h1>
-<p>rho_ini = 1000 L = 1 # m h = L / 2 z0 = h R = 0.8 * L # m w0 = 0.2</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="end-burn">
+<h1>End Burn<a class="headerlink" href="#end-burn" title="Permalink to this heading">#</a></h1>
+<section id="theory">
+<h2>Theory<a class="headerlink" href="#theory" title="Permalink to this heading">#</a></h2>
+<figure class="align-default" id="fig-4-7">
+<a class="reference internal image-reference" href="_images/Fig6.png"><img alt="_images/Fig6.png" src="_images/Fig6.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-text">End burning cylinder.</span><a class="headerlink" href="#fig-4-7" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In this mechanism of mass variation, the cylinder burns from the circular face closest to the exit plane towards its other face. At any instant, the unburned part retains the shape of a right circular cylinder. Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-4-7</span></code> represents a cylinder that burns from right to left. The axial radius of gyration for such a cylinder is constant, given by <span class="math notranslate nohighlight">\(k_3^2 = \frac{R^2}{4}\)</span>. The corresponding axial moment of inertia is</p>
+<div class="math notranslate nohighlight" id="equation-eq45">
+<span class="eqno">()<a class="headerlink" href="#equation-eq45" title="Permalink to this equation">#</a></span>\[J = m \frac{R^2}{4}\]</div>
+<p>As in the case of uniform burn, the spin rate can thus be determined from Equation <a class="reference internal" href="axisymmetric_vms.html#equation-eq18">(18)</a> to be constant,</p>
+<div class="math notranslate nohighlight" id="equation-eq46">
+<span class="eqno">()<a class="headerlink" href="#equation-eq46" title="Permalink to this equation">#</a></span>\[\omega_3 = \omega_{30}.\]</div>
+<p>The more interesting development occurs in the transverse directions. The transverse radius of gyration is <span class="math notranslate nohighlight">\(k_1^2 = \frac{R^2}{4} + \frac{z^2}{3}\)</span>. Due to the changing length of the cylinder, <span class="math notranslate nohighlight">\(k_1\)</span> is not a constant. Then, the transverse moment of inertia is</p>
+<div class="math notranslate nohighlight" id="equation-eq47">
+<span class="eqno">()<a class="headerlink" href="#equation-eq47" title="Permalink to this equation">#</a></span>\[I = m\left(\frac{R^2}{4} + \frac{z^2}{3}\right)\]</div>
+<p>If <span class="math notranslate nohighlight">\(z\)</span> is the instantaneous half length of the unburned cylinder, then its instantaneous mass is given by</p>
+<div class="math notranslate nohighlight" id="equation-eq48">
+<span class="eqno">()<a class="headerlink" href="#equation-eq48" title="Permalink to this equation">#</a></span>\[m = \pi R^2 (2z)\]</div>
+<p>The rate of mass loss is then</p>
+<div class="math notranslate nohighlight" id="equation-eq49">
+<span class="eqno">()<a class="headerlink" href="#equation-eq49" title="Permalink to this equation">#</a></span>\[\dot m = 2 \pi R^2 \dot z.\]</div>
+<p>which can also be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq50">
+<span class="eqno">()<a class="headerlink" href="#equation-eq50" title="Permalink to this equation">#</a></span>\[\mathrm{d}m = 2 \pi R^2 \mathrm{d}z.\]</div>
+<p>From Equations <a class="reference internal" href="#equation-eq48">()</a> and <a class="reference internal" href="#equation-eq50">()</a>, it is possible to recast Equation <a class="reference internal" href="axisymmetric_vms.html#equation-eq33">(32)</a> as</p>
+<div class="math notranslate nohighlight" id="equation-eq51">
+<span class="eqno">()<a class="headerlink" href="#equation-eq51" title="Permalink to this equation">#</a></span>\[\omega_{12} = \omega_0 \left(\frac{I(0)}{I}\right)
+\text{exp}\left[ \int_{z_0}^z
+\frac{\left[z_e^2 + \frac{R^2}{4}\right]}
+{\frac{R^2}{4} + \frac{z^2}{3}}
+\frac{\mathrm{d}z}{z}\right].\]</div>
+<p>Substituting <span class="math notranslate nohighlight">\(z_e = 2h - z\)</span> into Equation <a class="reference internal" href="#equation-eq51">()</a> gives</p>
+<div class="math notranslate nohighlight" id="equation-eq52">
+<span class="eqno">()<a class="headerlink" href="#equation-eq52" title="Permalink to this equation">#</a></span>\[\omega_{12} = \omega_0 \left(\frac{I(0)}{I}\right)
+\text{exp}\left[ \int_{z_0}^z
+\frac{\left[z^2 + 4h^2 -4hz + \frac{R^2}{4}\right]}
+{\frac{R^2}{4} + \frac{z^2}{3}}
+\frac{\mathrm{d}z}{z}\right]\]</div>
+<p>which can also be reformulated as</p>
+<div class="math notranslate nohighlight" id="equation-eq53">
+<span class="eqno">()<a class="headerlink" href="#equation-eq53" title="Permalink to this equation">#</a></span>\[\begin{split}\omega_{12} = \omega_0 \left(\frac{I(0)}{I}\right)
+\text{exp}\left[ 
+\int_{z_0}^z \frac{3z - 12h}{\frac{3R^2}{4} + z^2} \mathrm{d}z \nonumber\\
++ \left(12h^2 + \frac{3R^2}{4} \right)\int_{z_0}^z \frac{\mathrm{d}z}
+{z\left(\frac{3R^2}{4} + z^2\right)}
+\right].\end{split}\]</div>
+<p>A partial fraction expansion of the second integral in Equation <a class="reference internal" href="#equation-eq53">()</a> then gives</p>
+<div class="math notranslate nohighlight" id="equation-eq54">
+<span class="eqno">()<a class="headerlink" href="#equation-eq54" title="Permalink to this equation">#</a></span>\[\begin{split}\omega_{12} = \omega_0 \left(\frac{I(0)}{I}\right)
+\text{exp}\left[ 
+\int_{z_0}^z\frac{3z - 12h}
+{\frac{3R^2}{4} + z^2} \mathrm{d}z \nonumber\\
++ \left(\frac{16h^2}{R^2} + 1 \right) \int_{z_0}^z \left(\frac{1}{z}
+- \frac{z} {\frac{3R^2}{4} + z^2}\right) \mathrm{d}z	
+\right]\end{split}\]</div>
+<p>or, after some algebra,</p>
+<div class="math notranslate nohighlight" id="equation-eq55">
+<span class="eqno">()<a class="headerlink" href="#equation-eq55" title="Permalink to this equation">#</a></span>\[\begin{split}\omega_{12} = \omega_0 \left(\frac{I(0)}{I}\right)
+\text{exp}\left[
+-\int_{z_0}^z \frac{12h}{ \frac{3R^2}{4} + z^2 } \mathrm{d}z \nonumber \\  
+- \left(\frac{16h^2}{R^2} - 2 \right) 
+\int_{z_0}^z \frac{z}{\frac{3R^2}{4} + z^2} \mathrm{d}z\nonumber\\
++ \left(\frac{16h^2}{R^2} + 1 \right) \int_{z_0}^z\frac{\mathrm{d}z}{z}
+\right].\end{split}\]</div>
+<p>The solution to the transverse rate is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\omega_{12} = \omega_0 \left(\frac{I(0)}{I}\right)
+\text{exp}\left[
+\frac{8 \sqrt{3}h}{R} 
+\tan^{-1}\left( \frac{2\sqrt{3}R(z-h)}{3R^2 + 4zh} \right) \nonumber\\
+- \left(\frac{8h^2}{R^2} - 1 \right) \log\left( \frac{\frac{3R^2}{4} + z^2}
+{\frac{3R^2}{4} + h^2}\right) \nonumber\\
++ \left(\frac{16h^2}{R^2} + 1 \right) \log\left(\frac{z}{h}\right)
+\right].\end{split}\]</div>
+<p>which can also be expressed as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\omega_{12} = \omega_0 \left(\frac{I(0)}{I}\right)
+\left( \frac{\frac{3R^2}{4} + h^2}
+{\frac{3R^2}{4} + z^2}\right)^{ \left(\frac{8h^2}{R^2} - 1 \right)}
+\left(\frac{z}{h}\right)^ {\left(\frac{16h^2}{R^2} + 1 \right)} \nonumber\\
+\text{exp}\left[\frac{8 \sqrt{3}h}{R} 
+\tan^{-1}\left( \frac{2\sqrt{3}R(z-h)}{3R^2 + 4zh} \right)
+\right].\end{split}\]</div>
+<p>The above solution can also be expressed in terms of the transverse radius of gyration as</p>
+<div class="math notranslate nohighlight" id="equation-eq56">
+<span class="eqno">()<a class="headerlink" href="#equation-eq56" title="Permalink to this equation">#</a></span>\[\begin{split}\omega_{12} = \omega_0 \left(\frac{k_1(0)}{k_1}\right)^{\frac{8h^2}{R^2}}
+\left(\frac{z}{h}\right)^{\frac{16h^2}{R^2}}\nonumber\\
+\text{exp}\left[\frac{8 \sqrt{3}h}{R} 
+\tan^{-1}\left( \frac{2\sqrt{3}R(z-h)}{3R^2 + 4zh} \right)
+\right].\end{split}\]</div>
+<p>Equation <a class="reference internal" href="#equation-eq56">()</a> explains that, for an end burning cylinder, the transverse rate is regulated by 3 time-varying functions: the ratio of the initial transverse radius of gyration to its instantaneous value, the ratio of the instantaneous half length to the initial half length, and an exponential function. The first of these functions grows as the burn progresses but is always bounded as its denominator is never zero. The latter two functions, however, always decay with time. Thus, irrespective of the nature of the cylinder, the transverse rates for the end burn are always decaying; the rate of decay is seen to be faster for prolate cylinders when compared to oblate cylinders, which makes sense in view of Equation <a class="reference internal" href="#equation-eq56">()</a>. This has also been observed in Reference <span id="id1">[<a class="reference internal" href="refs.html#id12" title="F.O. Eke and S.-M. Wang. Attitude behavior of a variable mass cylinder. J. Appl. Mech., 62(4):935-940, 1995.">Eke and Wang, 1995</a>]</span>.</p>
+<p>The nutation angle for an end-burning cylinder is given by</p>
+<div class="math notranslate nohighlight" id="equation-eq57">
+<span class="eqno">()<a class="headerlink" href="#equation-eq57" title="Permalink to this equation">#</a></span>\[\theta(t) = \tan^{-1}( K k_1^2 \Gamma(t) ),\]</div>
+<p>where <span class="math notranslate nohighlight">\(K = \frac{\omega_0}{k_3^2 \omega_{30}}=\)</span> constant. As both <span class="math notranslate nohighlight">\(\Gamma(t)\)</span> and <span class="math notranslate nohighlight">\(k_1\)</span> are generally decreasing with time, the nutation angle decays with time for any end burning cylinder. In other words, jet damping is observed for such a mass-varying cylinder. Figures <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-4-8</span></code> and <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-4-9</span></code> show the body and space surfaces for end burning cylinders where the <span class="math notranslate nohighlight">\(J_0 &gt; I_0\)</span> (initial <span class="math notranslate nohighlight">\(L = 1\)</span> m and <span class="math notranslate nohighlight">\(R = 0.8\)</span> m) whereas Figures <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-4-10</span></code> and <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-4-11</span></code> are for end-burning cylinders where <span class="math notranslate nohighlight">\(J_0 &lt; I_0\)</span> (initial <span class="math notranslate nohighlight">\(L = 1\)</span> m and <span class="math notranslate nohighlight">\(R = 0.5\)</span> m). It is interesting to note in the second case (where <span class="math notranslate nohighlight">\(J_0 &lt; I_0\)</span>) that the angular velocity vector changes its direction of rotation, about both <span class="math notranslate nohighlight">\({\bf b}_3\)</span> and <span class="math notranslate nohighlight">\({\bf n}_h\)</span>. Initially, it rotates in a clockwise direction and then switches to a counterclockwise direction, eventually converging to a pure spin about <span class="math notranslate nohighlight">\({\bf b}_3\)</span> in the body frame and <span class="math notranslate nohighlight">\({\bf n}_h\)</span> in the inertial frame. This transition point occurs when the ratio of the axial radius of gyration to the transverse radius of gyration falls below 1 and changes the sign of <span class="math notranslate nohighlight">\(\dot \chi\)</span> as given by Equation <a class="reference internal" href="axisymmetric_vms.html#equation-eq24">(24)</a>. In either case, the end burn is seen to exhibit a decay in the cone angle and is thus nutationally stable.</p>
+<figure class="align-default" id="fig-4-8">
+<a class="reference internal image-reference" href="_images/Fig7.png"><img alt="_images/Fig7.png" src="_images/Fig7.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-text">End burn: body surface (<span class="math notranslate nohighlight">\(J_0 &gt; I_0\)</span>).</span><a class="headerlink" href="#fig-4-8" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="fig-4-9">
+<a class="reference internal image-reference" href="_images/Fig8.png"><img alt="_images/Fig8.png" src="_images/Fig8.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-text">End burn: space surface (<span class="math notranslate nohighlight">\(J_0 &gt; I_0\)</span>).</span><a class="headerlink" href="#fig-4-9" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="fig-4-10">
+<a class="reference internal image-reference" href="_images/Fig9.png"><img alt="_images/Fig9.png" src="_images/Fig9.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-text">End burn: body surface (<span class="math notranslate nohighlight">\(J_0 &lt; I_0\)</span>).</span><a class="headerlink" href="#fig-4-10" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="fig-4-11">
+<a class="reference internal image-reference" href="_images/Fig10.png"><img alt="_images/Fig10.png" src="_images/Fig10.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-text">End burn: space surface (<span class="math notranslate nohighlight">\(J_0 &lt; I_0\)</span>).</span><a class="headerlink" href="#fig-4-11" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="initial-angular-rates">
-<h1>Initial angular rates<a class="headerlink" href="#initial-angular-rates" title="Permalink to this heading">#</a></h1>
-<p>w10 = 0 w20 = w0 w30 = 0.3</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="initial-mass-properties">
-<h1>Initial mass properties<a class="headerlink" href="#initial-mass-properties" title="Permalink to this heading">#</a></h1>
-<p>mf0 = np.pi * R<strong>2 * L * rho_ini # kg I10 = mf0 * (R</strong>2 / 4 + h<strong>2
-/ 3) # kg*m^2 I30 = mf0 * R</strong>2 / 2 # kg*m^2 Theta0 = 0 F0 = 0 tb = 100
-# s m_dot = -mf0 / tb z_dot = m_dot / (2 * rho_ini * np.pi * R**2)</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="quaternion-initial-conditions-representing-no-initial-rotation">
-<h1>Quaternion initial conditions (representing no initial rotation)<a class="headerlink" href="#quaternion-initial-conditions-representing-no-initial-rotation" title="Permalink to this heading">#</a></h1>
-<p>q0 = [1, 0, 0, 0] # (w, x, y, z)</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="combine-initial-conditions">
-<h1>Combine initial conditions<a class="headerlink" href="#combine-initial-conditions" title="Permalink to this heading">#</a></h1>
-<p>Y0 = [mf0, I10, I30, w10, w20, w30, Theta0, F0, z0] + q0</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="define-the-differential-equations-endburn">
-<h1>Define the differential equations (endburn)<a class="headerlink" href="#define-the-differential-equations-endburn" title="Permalink to this heading">#</a></h1>
-<p>def endburn(t, w): m, I1, I3, w1, w2, w3, Theta, F, z, qw, qx, qy, qz =
-w</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Mass varying terms
-md = m_dot
-I1d = md * (R**2 / 4 + z**2)
-I3d = md * R**2 / 2
-
-# Distance of mass center from exit plane
-ze = 2 * h - z
-
-# Equations of motion for the axisymmetric cylinder undergoing uniform burn
-w1d = (I1 - I3) * w2 * w3 / I1 - (I1d - md * (ze**2 + R**2 / 4)) * w1 / I1
-w2d = -(I1 - I3) * w1 * w3 / I1 - (I1d - md * (ze**2 + R**2 / 4)) * w2 / I1
-w3d = -(I3d - md * R**2 / 2) * w3 / I3
-Thetad = (1 - I3 / I1) * w3
-Fd = -(I1d - md * (ze**2 + R**2 / 4)) / I1
-zd = md / m * z
-
-# Quaternion derivative
-omega_quat = np.array([0, w1, w2, w3])
-quat = np.array([qw, qx, qy, qz])
-quat_dot = 0.5 * np.array(quat_mult(quat, omega_quat))
-
-wd = [md, I1d, I3d, w1d, w2d, w3d, Thetad, Fd, zd] + quat_dot.tolist()
-
-# other variables
-Gam = np.exp(F)
-ext = np.zeros(9)
-ext[0] = w0 * Gam * np.cos(Theta)
-ext[1] = -w0 * Gam * np.sin(Theta)
-ext[2] = I1
-ext[3] = I3
-ext[6] = ze
-ext[7] = np.sqrt(I1 / m)  # transverse radius of gyration
-ext[8] = np.sqrt(I3 / m)  # spin radius of gyration
-
-# nutation angle calculations
-H12 = I1 * w0 * Gam
-H3 = I3 * w3
-ext[4] = np.arctan(H12 / H3)
-ext[5] = np.arctan(w0 * Gam / w3)
-
-return wd, ext
+<section class="tex2jax_ignore mathjax_ignore" id="simulation-results">
+<h1>Simulation Results<a class="headerlink" href="#simulation-results" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
 </pre></div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="function-to-multiply-two-quaternions">
-<h1>Function to multiply two quaternions<a class="headerlink" href="#function-to-multiply-two-quaternions" title="Permalink to this heading">#</a></h1>
-<p>def quat_mult(q, r): ““” Multiply two quaternions q and r. ““” w1, x1,
-y1, z1 = q w2, x2, y2, z2 = r return [ w1<em>w2 - x1</em>x2 - y1<em>y2 - z1</em>z2,
-w1<em>x2 + x1</em>w2 + y1<em>z2 - z1</em>y2, w1<em>y2 - x1</em>z2 + y1<em>w2 + z1</em>x2, w1<em>z2 +
-x1</em>y2 - y1<em>x2 + z1</em>w2 ]</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="time-span-for-the-simulation">
-<h1>Time span for the simulation<a class="headerlink" href="#time-span-for-the-simulation" title="Permalink to this heading">#</a></h1>
-<p>dt = 0.01 t_eval = np.arange(0, tb, dt)</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="solve-the-odes">
-<h1>Solve the ODEs<a class="headerlink" href="#solve-the-odes" title="Permalink to this heading">#</a></h1>
-<p>sol = solve_ivp(lambda t, y: endburn(t, y)[0], [0, tb], Y0,
-t_eval=t_eval, atol=1e-9, rtol=1e-8)</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="check-if-the-integration-was-successful">
-<h1>Check if the integration was successful<a class="headerlink" href="#check-if-the-integration-was-successful" title="Permalink to this heading">#</a></h1>
-<p>if sol.status == 0: print(“Integration successful.”) else:
-print(f”Integration failed with status {sol.status}: {sol.message}“)</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="print-the-final-time-to-check-if-it-reached-the-end-of-the-burn-time">
-<h1>Print the final time to check if it reached the end of the burn time<a class="headerlink" href="#print-the-final-time-to-check-if-it-reached-the-end-of-the-burn-time" title="Permalink to this heading">#</a></h1>
-<p>print(f”Final time: {sol.t[-1]}“)</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="extract-results">
-<h1>Extract results<a class="headerlink" href="#extract-results" title="Permalink to this heading">#</a></h1>
-<p>t = sol.t m = sol.y[0] I1 = sol.y[1] I3 = sol.y[2] omega1 =
-sol.y[3] omega2 = sol.y[4] omega3 = sol.y[5] chi = sol.y[6] F =
-sol.y[7] qw, qx, qy, qz = sol.y[8], sol.y[9], sol.y[10],
-sol.y[11]</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="compute-the-quaternion-norm-and-check-for-violations">
-<h1>Compute the quaternion norm and check for violations<a class="headerlink" href="#compute-the-quaternion-norm-and-check-for-violations" title="Permalink to this heading">#</a></h1>
-<p>quat_norm = np.sqrt(qw<strong>2 + qx</strong>2 + qy<strong>2 + qz</strong>2)
-norm_violation_indices = np.where(np.abs(quat_norm - 1) &gt; 1e-6)[0]</p>
-<p>if len(norm_violation_indices) &gt; 0: print(f”Quaternion constraint
-violated at time steps: {t[norm_violation_indices]}“) else:
-print(”Quaternion constraint satisfied throughout the simulation.”)</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="use-endburn-to-compute-additional-variables-ext-over-time">
-<h1>Use endburn to compute additional variables (ext) over time<a class="headerlink" href="#use-endburn-to-compute-additional-variables-ext-over-time" title="Permalink to this heading">#</a></h1>
-<p>ext = np.zeros((len(t), 9)) for i in range(len(t)): _, ext[i, :] =
-endburn(t[i], sol.y[:, i])</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="function-to-convert-quaternion-to-euler-angles-z-x-z-sequence">
-<h1>Function to convert quaternion to Euler angles (Z-X-Z sequence)<a class="headerlink" href="#function-to-convert-quaternion-to-euler-angles-z-x-z-sequence" title="Permalink to this heading">#</a></h1>
-<p>def quat_to_euler_zxz(q): ““” Convert a quaternion to Euler angles
-(Z-X-Z sequence). ““” w, x, y, z = q # Compute the Euler angles psi =
-np.arctan2(2*(w<em>z + x</em>y), 1 - 2*(y<strong>2 + z</strong>2)) theta =
-np.arccos(2*(w<em>y - z</em>x)) phi = np.arctan2(2*(w<em>z + y</em>x), 1 - 2*(x<strong>2 +
-y</strong>2)) return psi, theta, phi</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="extract-euler-angles-from-quaternions">
-<h1>Extract Euler angles from quaternions<a class="headerlink" href="#extract-euler-angles-from-quaternions" title="Permalink to this heading">#</a></h1>
-<p>psi, theta, phi = np.zeros(len(qw)), np.zeros(len(qw)),
-np.zeros(len(qw)) for i in range(len(qw)): psi[i], theta[i],
-phi[i] = quat_to_euler_zxz([qw[i], qx[i], qy[i], qz[i]])</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="plot-the-results">
-<h1>Plot the results<a class="headerlink" href="#plot-the-results" title="Permalink to this heading">#</a></h1>
-<p>plt.figure(figsize=(12, 6))</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="plot-angular-velocities">
-<h1>Plot angular velocities<a class="headerlink" href="#plot-angular-velocities" title="Permalink to this heading">#</a></h1>
-<p>plt.subplot(4, 1, 1) plt.plot(sol.t, omega1, label=‘omega1’)
-plt.plot(sol.t, omega2, label=‘omega2’) plt.plot(sol.t, omega3,
-label=‘omega3’) plt.xlabel(‘Time (s)’) plt.ylabel(‘Angular Velocity
-(rad/s)’) plt.title(‘Angular Velocity vs Time’) plt.legend()</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="plot-euler-angles">
-<h1>Plot Euler angles<a class="headerlink" href="#plot-euler-angles" title="Permalink to this heading">#</a></h1>
-<p>plt.subplot(4, 1, 2) plt.plot(sol.t, psi, label=‘psi’) plt.plot(sol.t,
-theta, label=‘theta’) plt.plot(sol.t, phi, label=‘phi’) plt.xlabel(‘Time
-(s)’) plt.ylabel(‘Euler Angles (rad)’) plt.title(‘Euler Angles vs Time’)
-plt.legend()</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="plot-quaternions">
-<h1>Plot quaternions<a class="headerlink" href="#plot-quaternions" title="Permalink to this heading">#</a></h1>
-<p>plt.subplot(4, 1, 3) plt.plot(sol.t, qw, label=‘qw’) plt.plot(sol.t, qx,
-label=‘qx’) plt.plot(sol.t, qy, label=‘qy’) plt.plot(sol.t, qz,
-label=‘qz’) plt.xlabel(‘Time (s)’) plt.ylabel(‘Quaternion Components’)
-plt.title(‘Quaternion Components vs Time’) plt.legend()</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="plot-mass-and-moments-of-inertia">
-<h1>Plot mass and moments of inertia<a class="headerlink" href="#plot-mass-and-moments-of-inertia" title="Permalink to this heading">#</a></h1>
-<p>plt.subplot(4, 1, 4) plt.plot(sol.t, m, label=‘mass’) plt.plot(sol.t,
-I1, label=‘I1’) plt.plot(sol.t, I3, label=‘I3’) plt.xlabel(‘Time (s)’)
-plt.ylabel(‘Mass and Inertias’) plt.title(‘Mass and Moments of Inertia
-vs Time’) plt.legend()</p>
-<p>plt.tight_layout() plt.show()</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="plot-the-t-handles-total-mechanical-energy-over-time">
-<h1>Plot the T-handle’s total mechanical energy over time<a class="headerlink" href="#plot-the-t-handles-total-mechanical-energy-over-time" title="Permalink to this heading">#</a></h1>
-<p>E = 0.5 * (I1 * omega1<strong>2 + I1 * omega2</strong>2 + I3 * omega3**2)</p>
-<p>plt.figure() plt.plot(sol.t, E, ‘-b’, linewidth=2) plt.xlabel(‘Time
-(s)’) plt.ylabel(‘Total mechanical energy (J)’) plt.ylim([min(E) *
-0.8, max(E) * 1.2]) # Set fixed y-axis limits plt.title(‘Total
-Mechanical Energy vs Time’) plt.show()</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="plot-the-components-of-the-angular-momentum-about-the-mass-center-and-the-total-angular-momentum-over-time">
-<h1>Plot the components of the angular momentum about the mass center and the total angular momentum over time<a class="headerlink" href="#plot-the-components-of-the-angular-momentum-about-the-mass-center-and-the-total-angular-momentum-over-time" title="Permalink to this heading">#</a></h1>
-<p>H1 = I1 * omega1 # kg-m^2/s H2 = I1 * omega2 # kg-m^2/s H3 = I3 *
-omega3 # kg-m^2/s H = np.sqrt(H1<strong>2 + H2</strong>2 + H3**2) # kg-m^2/s</p>
-<p>plt.figure() plt.plot(sol.t, H1, label=‘H e1’) plt.plot(sol.t, H2,
-label=‘H e2’) plt.plot(sol.t, H3, label=‘H e3’) plt.plot(sol.t, H,
-label=‘||H||’) plt.xlabel(‘Time (s)’) plt.ylabel(‘Angular momentum
-(kg-m^2/s)’) plt.title(‘Angular Momentum Components vs Time’)
-plt.legend() plt.show()</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="function-to-convert-quaternion-to-rotation-matrix">
-<h1>Function to convert quaternion to rotation matrix<a class="headerlink" href="#function-to-convert-quaternion-to-rotation-matrix" title="Permalink to this heading">#</a></h1>
-<p>def quat_to_rot_matrix(q): ““” Convert a quaternion q to a rotation
-matrix. ““” w, x, y, z = q return np.array([ [1 - 2*(y<strong>2 + z</strong>2),
-2*(x<em>y - z</em>w), 2*(x<em>z + y*w)], [2</em>(x<em>y + z</em>w), 1 - 2*(x<strong>2 + z</strong>2),
-2*(y<em>z - x*w)], [2</em>(x<em>z - y</em>w), 2*(y<em>z + x</em>w), 1 - 2*(x<strong>2 + y</strong>2)]
-])</p>
-<p>def animate_t_handle_quat(qw, qx, qy, qz, dt): # Specify dimensions
-for the T-handle LAG = 0.5 # cm LBC = 4 # cm LAD = 2 # cm</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Initialize arrays to store the T-handle&#39;s orientation and key points
-e1 = np.zeros((3, len(qw)))
-e2 = np.zeros((3, len(qw)))
-e3 = np.zeros((3, len(qw)))
-xA, yA, zA = np.zeros(len(qw)), np.zeros(len(qw)), np.zeros(len(qw))
-xB, yB, zB = np.zeros(len(qw)), np.zeros(len(qw)), np.zeros(len(qw))
-xC, yC, zC = np.zeros(len(qw)), np.zeros(len(qw)), np.zeros(len(qw))
-xD, yD, zD = np.zeros(len(qw)), np.zeros(len(qw)), np.zeros(len(qw))
-
-# Calculate the orientation of the T-handle over time
-for k in range(len(qw)):
-    q = [qw[k], qx[k], qy[k], qz[k]]
-    R = quat_to_rot_matrix(q)
-    e1[:, k] = R @ np.array([1, 0, 0])
-    e2[:, k] = R @ np.array([0, 1, 0])
-    e3[:, k] = R @ np.array([0, 0, 1])
-    xA[k] = -LAG * e2[0, k]
-    yA[k] = -LAG * e2[1, k]
-    zA[k] = -LAG * e2[2, k]
-    xB[k] = xA[k] + LBC / 2 * e1[0, k]
-    yB[k] = yA[k] + LBC / 2 * e1[1, k]
-    zB[k] = zA[k] + LBC / 2 * e1[2, k]
-    xC[k] = xA[k] - LBC / 2 * e1[0, k]
-    yC[k] = yA[k] - LBC / 2 * e1[1, k]
-    zC[k] = zA[k] - LBC / 2 * e1[2, k]
-    xD[k] = xA[k] + LAD * e2[0, k]
-    yD[k] = yA[k] + LAD * e2[1, k]
-    zD[k] = zA[k] + LAD * e2[2, k]
-
-# Set up the figure window
-fig = plt.figure()
-ax = fig.add_subplot(111, projection=&#39;3d&#39;)
-ax.set_xlabel(&#39;X (cm)&#39;)
-ax.set_ylabel(&#39;Y (cm)&#39;)
-ax.set_zlabel(&#39;Z (cm)&#39;)
-ax.set_xlim([-LBC, LBC])
-ax.set_ylim([-LBC, LBC])
-ax.set_zlim([-LAD, LAD])
-ax.set_title(&#39;T-handle Animation&#39;)
-
-# Draw the T-handle
-AD, = ax.plot([xA[0], xD[0]], [yA[0], yD[0]], [zA[0], zD[0]], &#39;k-&#39;, linewidth=5)
-BC, = ax.plot([xB[0], xC[0]], [yB[0], yC[0]], [zB[0], zC[0]], &#39;k-&#39;, linewidth=5)
-
-# Animate the T-handle&#39;s motion by updating the figure with its current orientation
-def update(k):
-    AD.set_data([xA[k], xD[k]], [yA[k], yD[k]])
-    AD.set_3d_properties([zA[k], zD[k]])
-    BC.set_data([xB[k], xC[k]], [yB[k], yC[k]])
-    BC.set_3d_properties([zB[k], zC[k]])
-    return AD, BC,
-
-ani = FuncAnimation(fig, update, frames=len(qw), interval=dt * 1000, blit=True)
-plt.show()
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
+Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
 </pre></div>
 </div>
+</div>
+</div>
+<section id="define-the-global-physical-parameters-for-the-variable-mass-system">
+<h2>Define the global physical parameters for the variable mass system<a class="headerlink" href="#define-the-global-physical-parameters-for-the-variable-mass-system" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho_ini</span> <span class="o">=</span> <span class="mi">1020</span>
+<span class="n">rho_exhaust</span> <span class="o">=</span> <span class="mf">0.002</span> <span class="o">*</span> <span class="n">rho_ini</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># m</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">L</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># m</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">L</span>  <span class="c1"># m</span>
+<span class="n">u</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># m/s</span>
+<span class="n">m_dot</span> <span class="o">=</span> <span class="o">-</span><span class="n">rho_exhaust</span> <span class="o">*</span> <span class="n">u</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">w0</span> <span class="o">=</span> <span class="mf">0.2</span>  <span class="c1"># rad/s</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="example-usage">
-<h1>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this heading">#</a></h1>
+<section id="initial-angular-rates">
+<h2>Initial angular rates<a class="headerlink" href="#initial-angular-rates" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w10</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># rad/s</span>
+<span class="n">w20</span> <span class="o">=</span> <span class="n">w0</span>  <span class="c1"># rad/s</span>
+<span class="n">w30</span> <span class="o">=</span> <span class="mf">0.3</span>  <span class="c1"># rad/s</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="assuming-qw-qx-qy-qz-are-the-quaternion-components-obtained-from-the-previous-solution">
-<h1>Assuming <code class="docutils literal notranslate"><span class="pre">qw</span></code>, <code class="docutils literal notranslate"><span class="pre">qx</span></code>, <code class="docutils literal notranslate"><span class="pre">qy</span></code>, <code class="docutils literal notranslate"><span class="pre">qz</span></code> are the quaternion components obtained from the previous solution<a class="headerlink" href="#assuming-qw-qx-qy-qz-are-the-quaternion-components-obtained-from-the-previous-solution" title="Permalink to this heading">#</a></h1>
-<p>animate_t_handle_quat(qw, qx, qy, qz, dt)</p>
+<section id="initial-mass-properties">
+<h2>Initial mass properties<a class="headerlink" href="#initial-mass-properties" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mf0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">L</span> <span class="o">*</span> <span class="n">rho_ini</span>  <span class="c1"># kg</span>
+<span class="n">I10</span> <span class="o">=</span> <span class="n">mf0</span> <span class="o">*</span> <span class="p">(</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">h</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># kg*m^2</span>
+<span class="n">I30</span> <span class="o">=</span> <span class="n">mf0</span> <span class="o">*</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># kg*m^2</span>
+<span class="n">chi0</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Initial precession angle</span>
+<span class="n">Fd0</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Initial F value</span>
+<span class="n">tb</span> <span class="o">=</span> <span class="o">-</span><span class="n">mf0</span> <span class="o">/</span> <span class="n">m_dot</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># Burn time</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="plot-the-quaternion-norm-over-time">
-<h1>Plot the quaternion norm over time<a class="headerlink" href="#plot-the-quaternion-norm-over-time" title="Permalink to this heading">#</a></h1>
-<p>plt.figure(figsize=(10, 6)) plt.plot(t, quat_norm, label=‘Quaternion
-Norm’) plt.axhline(y=1.0, color=‘r’, linestyle=‘–’, label=‘Ideal Norm
-(1.0)’) plt.xlabel(‘Time (s)’) plt.ylabel(‘Quaternion Norm’)
-plt.ylim([0.99, 1.01]) # Adjust y-limits for better visualization
-plt.title(‘Quaternion Norm vs Time’) plt.legend() plt.show()</p>
+<section id="quaternion-initial-conditions-representing-no-initial-rotation">
+<h2>Quaternion initial conditions (representing no initial rotation)<a class="headerlink" href="#quaternion-initial-conditions-representing-no-initial-rotation" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># (w, x, y, z)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="combine-initial-conditions">
+<h2>Combine initial conditions<a class="headerlink" href="#combine-initial-conditions" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y0</span> <span class="o">=</span> <span class="p">[</span><span class="n">mf0</span><span class="p">,</span> <span class="n">I10</span><span class="p">,</span> <span class="n">I30</span><span class="p">,</span> <span class="n">w10</span><span class="p">,</span> <span class="n">w20</span><span class="p">,</span> <span class="n">w30</span><span class="p">,</span> <span class="n">chi0</span><span class="p">,</span> <span class="n">Fd0</span><span class="p">]</span> <span class="o">+</span> <span class="n">q0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="define-the-differential-equations">
+<h2>Define the differential equations<a class="headerlink" href="#define-the-differential-equations" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">uniburn</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+    <span class="n">m</span><span class="p">,</span> <span class="n">I1</span><span class="p">,</span> <span class="n">I3</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">w3</span><span class="p">,</span> <span class="n">chi</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">qw</span><span class="p">,</span> <span class="n">qx</span><span class="p">,</span> <span class="n">qy</span><span class="p">,</span> <span class="n">qz</span> <span class="o">=</span> <span class="n">w</span>
+    <span class="c1"># Mass varying terms</span>
+    <span class="n">md</span> <span class="o">=</span> <span class="o">-</span><span class="n">rho_exhaust</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">u</span>  <span class="c1"># mass</span>
+    <span class="n">I1d</span> <span class="o">=</span> <span class="n">md</span> <span class="o">*</span> <span class="p">(</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">h</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># transverse moment of inertia</span>
+    <span class="n">I3d</span> <span class="o">=</span> <span class="n">md</span> <span class="o">*</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># spin moment of inertia</span>
+    <span class="c1"># Equations of motion for the axisymmetric cylinder undergoing uniform burn</span>
+    <span class="n">w1d</span> <span class="o">=</span> <span class="p">(</span><span class="n">I1</span> <span class="o">-</span> <span class="n">I3</span><span class="p">)</span> <span class="o">*</span> <span class="n">w2</span> <span class="o">*</span> <span class="n">w3</span> <span class="o">/</span> <span class="n">I1</span> <span class="o">-</span> <span class="p">(</span><span class="n">I1d</span> <span class="o">-</span> <span class="n">md</span> <span class="o">*</span> <span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">4</span><span class="p">))</span> <span class="o">*</span> <span class="n">w1</span> <span class="o">/</span> <span class="n">I1</span>
+    <span class="n">w2d</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">I1</span> <span class="o">-</span> <span class="n">I3</span><span class="p">)</span> <span class="o">*</span> <span class="n">w1</span> <span class="o">*</span> <span class="n">w3</span> <span class="o">/</span> <span class="n">I1</span> <span class="o">-</span> <span class="p">(</span><span class="n">I1d</span> <span class="o">-</span> <span class="n">md</span> <span class="o">*</span> <span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">4</span><span class="p">))</span> <span class="o">*</span> <span class="n">w2</span> <span class="o">/</span> <span class="n">I1</span>
+    <span class="n">w3d</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">I3d</span> <span class="o">-</span> <span class="n">md</span> <span class="o">*</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">w3</span>
+    <span class="n">chid</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">I3</span> <span class="o">/</span> <span class="n">I1</span><span class="p">)</span> <span class="o">*</span> <span class="n">w3</span>
+    <span class="n">Fd</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">I1d</span> <span class="o">-</span> <span class="n">md</span> <span class="o">*</span> <span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">4</span><span class="p">))</span> <span class="o">/</span> <span class="n">I1</span>
+    <span class="c1"># Quaternion derivative</span>
+    <span class="n">omega_quat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">w3</span><span class="p">])</span>
+    <span class="n">quat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">qw</span><span class="p">,</span> <span class="n">qx</span><span class="p">,</span> <span class="n">qy</span><span class="p">,</span> <span class="n">qz</span><span class="p">])</span>
+    <span class="n">quat_dot</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">quat_mult</span><span class="p">(</span><span class="n">quat</span><span class="p">,</span> <span class="n">omega_quat</span><span class="p">))</span>
+    <span class="n">wd</span> <span class="o">=</span> <span class="p">[</span><span class="n">md</span><span class="p">,</span> <span class="n">I1d</span><span class="p">,</span> <span class="n">I3d</span><span class="p">,</span> <span class="n">w1d</span><span class="p">,</span> <span class="n">w2d</span><span class="p">,</span> <span class="n">w3d</span><span class="p">,</span> <span class="n">chid</span><span class="p">,</span> <span class="n">Fd</span><span class="p">,</span> <span class="n">quat_dot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">quat_dot</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">quat_dot</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">quat_dot</span><span class="p">[</span><span class="mi">3</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">wd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="function-to-multiply-two-quaternions">
+<h2>Function to multiply two quaternions<a class="headerlink" href="#function-to-multiply-two-quaternions" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quat_mult</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="n">w1</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span> <span class="o">=</span> <span class="n">q</span>
+    <span class="n">w2</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span> <span class="o">=</span> <span class="n">r</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">w1</span><span class="o">*</span><span class="n">w2</span> <span class="o">-</span> <span class="n">x1</span><span class="o">*</span><span class="n">x2</span> <span class="o">-</span> <span class="n">y1</span><span class="o">*</span><span class="n">y2</span> <span class="o">-</span> <span class="n">z1</span><span class="o">*</span><span class="n">z2</span><span class="p">,</span>
+        <span class="n">w1</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="n">x1</span><span class="o">*</span><span class="n">w2</span> <span class="o">+</span> <span class="n">y1</span><span class="o">*</span><span class="n">z2</span> <span class="o">-</span> <span class="n">z1</span><span class="o">*</span><span class="n">y2</span><span class="p">,</span>
+        <span class="n">w1</span><span class="o">*</span><span class="n">y2</span> <span class="o">-</span> <span class="n">x1</span><span class="o">*</span><span class="n">z2</span> <span class="o">+</span> <span class="n">y1</span><span class="o">*</span><span class="n">w2</span> <span class="o">+</span> <span class="n">z1</span><span class="o">*</span><span class="n">x2</span><span class="p">,</span>
+        <span class="n">w1</span><span class="o">*</span><span class="n">z2</span> <span class="o">+</span> <span class="n">x1</span><span class="o">*</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="n">z1</span><span class="o">*</span><span class="n">w2</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="time-span-for-the-simulation">
+<h2>Time span for the simulation<a class="headerlink" href="#time-span-for-the-simulation" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">t_eval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tb</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="solve-the-odes">
+<h2>Solve the ODEs<a class="headerlink" href="#solve-the-odes" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">uniburn</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">tb</span><span class="p">],</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">t_eval</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-9</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">)</span>
+
+<span class="c1"># Extract results if the integration was successful</span>
+<span class="k">if</span> <span class="n">sol</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Integration successful.&quot;</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">t</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">I1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">I3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">omega1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">omega2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+    <span class="n">omega3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+    <span class="n">chi</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+    <span class="n">qw</span><span class="p">,</span> <span class="n">qx</span><span class="p">,</span> <span class="n">qy</span><span class="p">,</span> <span class="n">qz</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Integration failed with status </span><span class="si">{</span><span class="n">sol</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">sol</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Print the final time to check if it reached the end of the burn time</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Final time: </span><span class="si">{</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Integration successful.
+Final time: 99.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the quaternion norm over time</span>
+<span class="n">quat_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">qw</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">qx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">qy</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">qz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">norm_violation_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">quat_norm</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1e-6</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">norm_violation_indices</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Quaternion constraint violated at time steps: </span><span class="si">{</span><span class="n">t</span><span class="p">[</span><span class="n">norm_violation_indices</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quaternion constraint satisfied throughout the simulation.&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">quat_norm</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Quaternion Norm&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ideal Norm (1.0)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Quaternion Norm&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Quaternion Norm vs Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mf">0.99</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">])</span>  <span class="c1"># Adjust y-limits for better visualization</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quaternion constraint satisfied throughout the simulation.
+</pre></div>
+</div>
+<img alt="_images/d5bcfd026146c03474a03913a3777714b2590f9e89493a507b2d4e6fbf257bd9.png" src="_images/d5bcfd026146c03474a03913a3777714b2590f9e89493a507b2d4e6fbf257bd9.png" />
+</div>
+</div>
+</section>
+<section id="function-to-convert-quaternion-to-euler-angles-z-x-z-sequence">
+<h2>Function to convert quaternion to Euler angles (Z-X-Z sequence)<a class="headerlink" href="#function-to-convert-quaternion-to-euler-angles-z-x-z-sequence" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quat_to_euler_zxz</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert a quaternion to Euler angles (Z-X-Z sequence).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">q</span>
+    <span class="c1"># Compute the Euler angles</span>
+    <span class="n">psi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">z</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">),</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">y</span> <span class="o">-</span> <span class="n">z</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">z</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">psi</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="extract-euler-angles-from-quaternions">
+<h2>Extract Euler angles from quaternions<a class="headerlink" href="#extract-euler-angles-from-quaternions" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">)):</span>
+    <span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">theta</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">quat_to_euler_zxz</span><span class="p">([</span><span class="n">qw</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">qx</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">qy</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">qz</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-the-results">
+<h2>Plot the results<a class="headerlink" href="#plot-the-results" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Plot angular velocities</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">omega1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;omega1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">omega2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;omega2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">omega3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;omega3&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Angular Velocity (rad/s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Angular Velocity vs Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Plot Euler angles</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">psi</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;psi&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;theta&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;phi&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Euler Angles (rad)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Euler Angles vs Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Plot quaternions</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">qw</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;qw&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">qx</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;qx&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">qy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;qy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">qz</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;qz&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Quaternion Components&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Quaternion Components vs Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Plot mass and moments of inertia</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;mass&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">I1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;I1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">I3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;I3&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Mass and Inertias&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mass and Moments of Inertia vs Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/075a8ed85f38366566506b117c196ca060e276a6bfe865ba8f3c81f0a34516cd.png" src="_images/075a8ed85f38366566506b117c196ca060e276a6bfe865ba8f3c81f0a34516cd.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the T-handle&#39;s total mechanical energy over time</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">I1</span> <span class="o">*</span> <span class="n">omega1</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">I1</span> <span class="o">*</span> <span class="n">omega2</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">I3</span> <span class="o">*</span> <span class="n">omega3</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Total mechanical energy (J)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">E</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">E</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.2</span><span class="p">])</span>  <span class="c1"># Set fixed y-axis limits</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Total Mechanical Energy vs Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Plot the components of the angular momentum about the mass center and the total angular momentum over time</span>
+<span class="n">H1</span> <span class="o">=</span> <span class="n">I1</span> <span class="o">*</span> <span class="n">omega1</span>  <span class="c1"># kg-m^2/s</span>
+<span class="n">H2</span> <span class="o">=</span> <span class="n">I1</span> <span class="o">*</span> <span class="n">omega2</span>  <span class="c1"># kg-m^2/s</span>
+<span class="n">H3</span> <span class="o">=</span> <span class="n">I3</span> <span class="o">*</span> <span class="n">omega3</span>  <span class="c1"># kg-m^2/s</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">H1</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">H2</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">H3</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># kg-m^2/s</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">H1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;H \cdot e1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">H2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;H \cdot e2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">H3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;H \cdot e3&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;||H||&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Angular momentum (kg-m^2/s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Angular Momentum Components vs Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/97b96667cf3fa1a9ceaae10611e73076ab962dbfdc8fbde4c90e54fa4310dedf.png" src="_images/97b96667cf3fa1a9ceaae10611e73076ab962dbfdc8fbde4c90e54fa4310dedf.png" />
+<img alt="_images/03ee49c5ed01cd67244154489ec1a2f82a3cc5f125c9b6e67f7aa4e361141ca4.png" src="_images/03ee49c5ed01cd67244154489ec1a2f82a3cc5f125c9b6e67f7aa4e361141ca4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to convert quaternion to rotation matrix</span>
+<span class="k">def</span> <span class="nf">quat_to_rot_matrix</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert a quaternion q to a rotation matrix.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">q</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="p">[</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span> <span class="o">-</span> <span class="n">z</span><span class="o">*</span><span class="n">w</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">z</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">w</span><span class="p">)],</span>
+        <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="o">*</span><span class="n">w</span><span class="p">),</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">*</span><span class="n">z</span> <span class="o">-</span> <span class="n">x</span><span class="o">*</span><span class="n">w</span><span class="p">)],</span>
+        <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">z</span> <span class="o">-</span> <span class="n">y</span><span class="o">*</span><span class="n">w</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">*</span><span class="n">z</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="n">w</span><span class="p">),</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)]</span>
+    <span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">animate_t_handle_quat</span><span class="p">(</span><span class="n">qw</span><span class="p">,</span> <span class="n">qx</span><span class="p">,</span> <span class="n">qy</span><span class="p">,</span> <span class="n">qz</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+    <span class="c1"># Specify dimensions for the T-handle</span>
+    <span class="n">LAG</span> <span class="o">=</span> <span class="mf">0.5</span>  <span class="c1"># cm</span>
+    <span class="n">LBC</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># cm</span>
+    <span class="n">LAD</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># cm</span>
+
+    <span class="c1"># Initialize arrays to store the T-handle&#39;s orientation and key points</span>
+    <span class="n">e1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">)))</span>
+    <span class="n">e2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">)))</span>
+    <span class="n">e3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">)))</span>
+    <span class="n">xA</span><span class="p">,</span> <span class="n">yA</span><span class="p">,</span> <span class="n">zA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">))</span>
+    <span class="n">xB</span><span class="p">,</span> <span class="n">yB</span><span class="p">,</span> <span class="n">zB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">))</span>
+    <span class="n">xC</span><span class="p">,</span> <span class="n">yC</span><span class="p">,</span> <span class="n">zC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">))</span>
+    <span class="n">xD</span><span class="p">,</span> <span class="n">yD</span><span class="p">,</span> <span class="n">zD</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">))</span>
+
+    <span class="c1"># Calculate the orientation of the T-handle over time</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">)):</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="p">[</span><span class="n">qw</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">qx</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">qy</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">qz</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span>
+        <span class="n">R</span> <span class="o">=</span> <span class="n">quat_to_rot_matrix</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+        <span class="n">e1</span><span class="p">[:,</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="n">e2</span><span class="p">[:,</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="n">e3</span><span class="p">[:,</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">xA</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">LAG</span> <span class="o">*</span> <span class="n">e2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+        <span class="n">yA</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">LAG</span> <span class="o">*</span> <span class="n">e2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+        <span class="n">zA</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">LAG</span> <span class="o">*</span> <span class="n">e2</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+        <span class="n">xB</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">xA</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">LBC</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">e1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+        <span class="n">yB</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">yA</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">LBC</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">e1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+        <span class="n">zB</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">zA</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">LBC</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">e1</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+        <span class="n">xC</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">xA</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">LBC</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">e1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+        <span class="n">yC</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">yA</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">LBC</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">e1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+        <span class="n">zC</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">zA</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">LBC</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">e1</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+        <span class="n">xD</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">xA</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">LAD</span> <span class="o">*</span> <span class="n">e2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+        <span class="n">yD</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">yA</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">LAD</span> <span class="o">*</span> <span class="n">e2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+        <span class="n">zD</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">zA</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">LAD</span> <span class="o">*</span> <span class="n">e2</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+
+    <span class="c1"># Set up the figure window</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X (cm)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y (cm)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;Z (cm)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="n">LBC</span><span class="p">,</span> <span class="n">LBC</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="n">LBC</span><span class="p">,</span> <span class="n">LBC</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">([</span><span class="o">-</span><span class="n">LAD</span><span class="p">,</span> <span class="n">LAD</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;T-handle Animation&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Draw the T-handle</span>
+    <span class="n">AD</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xA</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xD</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">yA</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">yD</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">zA</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">zD</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">BC</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xB</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xC</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">yB</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">yC</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">zB</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">zC</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="c1"># Animate the T-handle&#39;s motion by updating the figure with its current orientation</span>
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+        <span class="n">AD</span><span class="o">.</span><span class="n">set_data</span><span class="p">([</span><span class="n">xA</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">xD</span><span class="p">[</span><span class="n">k</span><span class="p">]],</span> <span class="p">[</span><span class="n">yA</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">yD</span><span class="p">[</span><span class="n">k</span><span class="p">]])</span>
+        <span class="n">AD</span><span class="o">.</span><span class="n">set_3d_properties</span><span class="p">([</span><span class="n">zA</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">zD</span><span class="p">[</span><span class="n">k</span><span class="p">]])</span>
+        <span class="n">BC</span><span class="o">.</span><span class="n">set_data</span><span class="p">([</span><span class="n">xB</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">xC</span><span class="p">[</span><span class="n">k</span><span class="p">]],</span> <span class="p">[</span><span class="n">yB</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">yC</span><span class="p">[</span><span class="n">k</span><span class="p">]])</span>
+        <span class="n">BC</span><span class="o">.</span><span class="n">set_3d_properties</span><span class="p">([</span><span class="n">zB</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">zC</span><span class="p">[</span><span class="n">k</span><span class="p">]])</span>
+        <span class="k">return</span> <span class="n">AD</span><span class="p">,</span> <span class="n">BC</span><span class="p">,</span>
+
+    <span class="n">ani</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">qw</span><span class="p">),</span> <span class="n">interval</span><span class="o">=</span><span class="n">dt</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Example usage</span>
+<span class="c1"># Assuming `qw`, `qx`, `qy`, `qz` are the quaternion components obtained from the previous solution</span>
+<span class="n">animate_t_handle_quat</span><span class="p">(</span><span class="n">qw</span><span class="p">,</span> <span class="n">qx</span><span class="p">,</span> <span class="n">qy</span><span class="p">,</span> <span class="n">qz</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1070ec0b6741b7fc28210d81edec4f8c6588e71b22f21574ac0edbbfd812ce17.png" src="_images/1070ec0b6741b7fc28210d81edec4f8c6588e71b22f21574ac0edbbfd812ce17.png" />
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -791,33 +1035,25 @@ plt.title(‘Quaternion Norm vs Time’) plt.legend() plt.show()</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Define the global physical parameters for the variable mass system</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-angular-rates">Initial angular rates</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-mass-properties">Initial mass properties</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quaternion-initial-conditions-representing-no-initial-rotation">Quaternion initial conditions (representing no initial rotation)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-initial-conditions">Combine initial conditions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-differential-equations-endburn">Define the differential equations (endburn)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-multiply-two-quaternions">Function to multiply two quaternions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#time-span-for-the-simulation">Time span for the simulation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-odes">Solve the ODEs</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-the-integration-was-successful">Check if the integration was successful</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#print-the-final-time-to-check-if-it-reached-the-end-of-the-burn-time">Print the final time to check if it reached the end of the burn time</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-results">Extract results</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-quaternion-norm-and-check-for-violations">Compute the quaternion norm and check for violations</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-endburn-to-compute-additional-variables-ext-over-time">Use endburn to compute additional variables (ext) over time</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-convert-quaternion-to-euler-angles-z-x-z-sequence">Function to convert quaternion to Euler angles (Z-X-Z sequence)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-euler-angles-from-quaternions">Extract Euler angles from quaternions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-results">Plot the results</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-angular-velocities">Plot angular velocities</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-euler-angles">Plot Euler angles</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-quaternions">Plot quaternions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-mass-and-moments-of-inertia">Plot mass and moments of inertia</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-t-handles-total-mechanical-energy-over-time">Plot the T-handle’s total mechanical energy over time</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-components-of-the-angular-momentum-about-the-mass-center-and-the-total-angular-momentum-over-time">Plot the components of the angular momentum about the mass center and the total angular momentum over time</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-convert-quaternion-to-rotation-matrix">Function to convert quaternion to rotation matrix</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage">Example usage</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#assuming-qw-qx-qy-qz-are-the-quaternion-components-obtained-from-the-previous-solution">Assuming <code class="docutils literal notranslate"><span class="pre">qw</span></code>, <code class="docutils literal notranslate"><span class="pre">qx</span></code>, <code class="docutils literal notranslate"><span class="pre">qy</span></code>, <code class="docutils literal notranslate"><span class="pre">qz</span></code> are the quaternion components obtained from the previous solution</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-quaternion-norm-over-time">Plot the quaternion norm over time</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">End Burn</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theory">Theory</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-results">Simulation Results</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-global-physical-parameters-for-the-variable-mass-system">Define the global physical parameters for the variable mass system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-angular-rates">Initial angular rates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-mass-properties">Initial mass properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quaternion-initial-conditions-representing-no-initial-rotation">Quaternion initial conditions (representing no initial rotation)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-initial-conditions">Combine initial conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-differential-equations">Define the differential equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-multiply-two-quaternions">Function to multiply two quaternions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-span-for-the-simulation">Time span for the simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-odes">Solve the ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-to-convert-quaternion-to-euler-angles-z-x-z-sequence">Function to convert quaternion to Euler angles (Z-X-Z sequence)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-euler-angles-from-quaternions">Extract Euler angles from quaternions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-results">Plot the results</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>

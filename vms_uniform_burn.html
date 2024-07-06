@@ -222,31 +222,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="vms_radial_burn.html">Define the global physical parameters for the variable mass system</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="vms_radial_burn.html">Uniform Burn</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
@@ -502,11 +478,23 @@ document.write(`
 <div class="math notranslate nohighlight" id="equation-eq43">
 <span class="eqno">(43)<a class="headerlink" href="#equation-eq43" title="Permalink to this equation">#</a></span>\[\theta(t) = \tan^{-1}( K \Gamma(t) ),\]</div>
 <p>where <span class="math notranslate nohighlight">\(K = \frac{k_1^2 \omega_0}{k_3^2 \omega_{30}}\)</span>. Since <span class="math notranslate nohighlight">\(K\)</span> is constant and <span class="math notranslate nohighlight">\(\Gamma(t)\)</span> is decreasing with time, the nutation angle is also a decreasing parameter with time. This reduction in the transverse oscillations of a variable mass system by the exhaust gas is referred to as jet damping of a rocket.</p>
-<p>The rotation of <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span> about <span class="math notranslate nohighlight">\({\bf b}_3\)</span> and <span class="math notranslate nohighlight">\({\bf n}_h\)</span> was discussed in the earlier section on generic axisymmetric variable mass systems. Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-4-5</span></code> visualizes the first of these rotations for the uniformly burning cylinder, assuming <span class="math notranslate nohighlight">\(k_3 &gt; k_1\)</span>. The angular velocity vector traces a spiral in the transverse plane as it rotates about the symmetry axis <span class="math notranslate nohighlight">\({\bf b}_3\)</span> in a counter-clockwise direction and eventually converges to the symmetry axis.</p>
+<p>The rotation of <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span> about <span class="math notranslate nohighlight">\({\bf b}_3\)</span> and <span class="math notranslate nohighlight">\({\bf n}_h\)</span> was discussed in the earlier section on generic axisymmetric variable mass systems. Figure <a class="reference internal" href="#fig-4-5"><span class="std std-numref">Fig. 4</span></a> visualizes the first of these rotations for the uniformly burning cylinder, assuming <span class="math notranslate nohighlight">\(k_3 &gt; k_1\)</span>. The angular velocity vector traces a spiral in the transverse plane as it rotates about the symmetry axis <span class="math notranslate nohighlight">\({\bf b}_3\)</span> in a counter-clockwise direction and eventually converges to the symmetry axis.</p>
+<figure class="align-default" id="fig-4-5">
+<a class="reference internal image-reference" href="_images/Fig4.png"><img alt="_images/Fig4.png" src="_images/Fig4.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Uniform burn: body surface.</span><a class="headerlink" href="#fig-4-5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="fig-4-6">
+<a class="reference internal image-reference" href="_images/Fig5.png"><img alt="_images/Fig5.png" src="_images/Fig5.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Uniform burn: space surface.</span><a class="headerlink" href="#fig-4-6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The rotation of <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span> in the inertial space (i.e., about <span class="math notranslate nohighlight">\({\bf n}_h\)</span> since it is inertially fixed) requires knowledge of the angle, <span class="math notranslate nohighlight">\(\beta\)</span>, in Equation <a class="reference internal" href="geometry-of-motion.html#equation-eq40">(40)</a>:</p>
 <div class="math notranslate nohighlight" id="equation-eq44">
 <span class="eqno">(44)<a class="headerlink" href="#equation-eq44" title="Permalink to this equation">#</a></span>\[\beta = \tan^{-1}\bigg(\frac{\omega_{0}}{\omega_{30}} \left(\frac{m}{m(0)}\right)^{\frac{2h^2}{3k_1^2}} \bigg).\]</div>
-<p>This angle also decays with time for the uniformly burning cylinder, effectively reducing the system’s motion to that of simple or pure spin, i.e., a motion in which the angular velocity and angular momentum vectors are parallel. The above expressions of <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(\beta\)</span> along with the angular velocity permit the construction of the space surface as shown in Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-4-6</span></code>. Note that <span class="math notranslate nohighlight">\({\bf n}_f\)</span>, <span class="math notranslate nohighlight">\({\bf n}_g\)</span>, and <span class="math notranslate nohighlight">\({\bf n}_h\)</span> represent a dextral set of unit vectors which are inertially fixed.</p>
+<p>This angle also decays with time for the uniformly burning cylinder, effectively reducing the system’s motion to that of simple or pure spin, i.e., a motion in which the angular velocity and angular momentum vectors are parallel. The above expressions of <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(\beta\)</span> along with the angular velocity permit the construction of the space surface as shown in Figure <a class="reference internal" href="#fig-4-6"><span class="std std-numref">Fig. 5</span></a>. Note that <span class="math notranslate nohighlight">\({\bf n}_f\)</span>, <span class="math notranslate nohighlight">\({\bf n}_g\)</span>, and <span class="math notranslate nohighlight">\({\bf n}_h\)</span> represent a dextral set of unit vectors which are inertially fixed.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="simulation-results">
