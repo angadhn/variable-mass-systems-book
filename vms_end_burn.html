@@ -67,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'vms_end_burn';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Radial Burn" href="vms_radial_burn.html" />
+    <link rel="prev" title="Uniform Burn" href="vms_uniform_burn.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -189,36 +191,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="geometry-of-motion.html">Geometry of Torque-free Motion and Nutation Angle Solution</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Attitude Dynamics of Variable Mass Cylinders</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="axisymmetric_vm_cylinder.html">The Axisymmetric, Variable Mass Cylinder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vms_uniform_burn.html">Uniform Burn</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="vms_end_burn_normallized_quaternion.html">Define global variables</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">End Burn</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="vms_radial_burn.html">Radial Burn</a></li>
 
@@ -459,52 +436,52 @@ document.write(`
 <figure class="align-default" id="fig-4-7">
 <a class="reference internal image-reference" href="_images/Fig6.png"><img alt="_images/Fig6.png" src="_images/Fig6.png" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-text">End burning cylinder.</span><a class="headerlink" href="#fig-4-7" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">End burning cylinder.</span><a class="headerlink" href="#fig-4-7" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>In this mechanism of mass variation, the cylinder burns from the circular face closest to the exit plane towards its other face. At any instant, the unburned part retains the shape of a right circular cylinder. Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-4-7</span></code> represents a cylinder that burns from right to left. The axial radius of gyration for such a cylinder is constant, given by <span class="math notranslate nohighlight">\(k_3^2 = \frac{R^2}{4}\)</span>. The corresponding axial moment of inertia is</p>
+<p>In this mechanism of mass variation, the cylinder burns from the circular face closest to the exit plane towards its other face. At any instant, the unburned part retains the shape of a right circular cylinder. Figure <a class="reference internal" href="#fig-4-7"><span class="std std-numref">Fig. 6</span></a> represents a cylinder that burns from right to left. The axial radius of gyration for such a cylinder is constant, given by <span class="math notranslate nohighlight">\(k_3^2 = \frac{R^2}{4}\)</span>. The corresponding axial moment of inertia is</p>
 <div class="math notranslate nohighlight" id="equation-eq45">
-<span class="eqno">()<a class="headerlink" href="#equation-eq45" title="Permalink to this equation">#</a></span>\[J = m \frac{R^2}{4}\]</div>
+<span class="eqno">(45)<a class="headerlink" href="#equation-eq45" title="Permalink to this equation">#</a></span>\[J = m \frac{R^2}{4}\]</div>
 <p>As in the case of uniform burn, the spin rate can thus be determined from Equation <a class="reference internal" href="axisymmetric_vms.html#equation-eq18">(18)</a> to be constant,</p>
 <div class="math notranslate nohighlight" id="equation-eq46">
-<span class="eqno">()<a class="headerlink" href="#equation-eq46" title="Permalink to this equation">#</a></span>\[\omega_3 = \omega_{30}.\]</div>
+<span class="eqno">(46)<a class="headerlink" href="#equation-eq46" title="Permalink to this equation">#</a></span>\[\omega_3 = \omega_{30}.\]</div>
 <p>The more interesting development occurs in the transverse directions. The transverse radius of gyration is <span class="math notranslate nohighlight">\(k_1^2 = \frac{R^2}{4} + \frac{z^2}{3}\)</span>. Due to the changing length of the cylinder, <span class="math notranslate nohighlight">\(k_1\)</span> is not a constant. Then, the transverse moment of inertia is</p>
 <div class="math notranslate nohighlight" id="equation-eq47">
-<span class="eqno">()<a class="headerlink" href="#equation-eq47" title="Permalink to this equation">#</a></span>\[I = m\left(\frac{R^2}{4} + \frac{z^2}{3}\right)\]</div>
+<span class="eqno">(47)<a class="headerlink" href="#equation-eq47" title="Permalink to this equation">#</a></span>\[I = m\left(\frac{R^2}{4} + \frac{z^2}{3}\right)\]</div>
 <p>If <span class="math notranslate nohighlight">\(z\)</span> is the instantaneous half length of the unburned cylinder, then its instantaneous mass is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq48">
-<span class="eqno">()<a class="headerlink" href="#equation-eq48" title="Permalink to this equation">#</a></span>\[m = \pi R^2 (2z)\]</div>
+<span class="eqno">(48)<a class="headerlink" href="#equation-eq48" title="Permalink to this equation">#</a></span>\[m = \pi R^2 (2z)\]</div>
 <p>The rate of mass loss is then</p>
 <div class="math notranslate nohighlight" id="equation-eq49">
-<span class="eqno">()<a class="headerlink" href="#equation-eq49" title="Permalink to this equation">#</a></span>\[\dot m = 2 \pi R^2 \dot z.\]</div>
+<span class="eqno">(49)<a class="headerlink" href="#equation-eq49" title="Permalink to this equation">#</a></span>\[\dot m = 2 \pi R^2 \dot z.\]</div>
 <p>which can also be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq50">
-<span class="eqno">()<a class="headerlink" href="#equation-eq50" title="Permalink to this equation">#</a></span>\[\mathrm{d}m = 2 \pi R^2 \mathrm{d}z.\]</div>
-<p>From Equations <a class="reference internal" href="#equation-eq48">()</a> and <a class="reference internal" href="#equation-eq50">()</a>, it is possible to recast Equation <a class="reference internal" href="axisymmetric_vms.html#equation-eq33">(32)</a> as</p>
+<span class="eqno">(50)<a class="headerlink" href="#equation-eq50" title="Permalink to this equation">#</a></span>\[\mathrm{d}m = 2 \pi R^2 \mathrm{d}z.\]</div>
+<p>From Equations <a class="reference internal" href="#equation-eq48">(48)</a> and <a class="reference internal" href="#equation-eq50">(50)</a>, it is possible to recast Equation <a class="reference internal" href="axisymmetric_vms.html#equation-eq33">(32)</a> as</p>
 <div class="math notranslate nohighlight" id="equation-eq51">
-<span class="eqno">()<a class="headerlink" href="#equation-eq51" title="Permalink to this equation">#</a></span>\[\omega_{12} = \omega_0 \left(\frac{I(0)}{I}\right)
+<span class="eqno">(51)<a class="headerlink" href="#equation-eq51" title="Permalink to this equation">#</a></span>\[\omega_{12} = \omega_0 \left(\frac{I(0)}{I}\right)
 \text{exp}\left[ \int_{z_0}^z
 \frac{\left[z_e^2 + \frac{R^2}{4}\right]}
 {\frac{R^2}{4} + \frac{z^2}{3}}
 \frac{\mathrm{d}z}{z}\right].\]</div>
-<p>Substituting <span class="math notranslate nohighlight">\(z_e = 2h - z\)</span> into Equation <a class="reference internal" href="#equation-eq51">()</a> gives</p>
+<p>Substituting <span class="math notranslate nohighlight">\(z_e = 2h - z\)</span> into Equation <a class="reference internal" href="#equation-eq51">(51)</a> gives</p>
 <div class="math notranslate nohighlight" id="equation-eq52">
-<span class="eqno">()<a class="headerlink" href="#equation-eq52" title="Permalink to this equation">#</a></span>\[\omega_{12} = \omega_0 \left(\frac{I(0)}{I}\right)
+<span class="eqno">(52)<a class="headerlink" href="#equation-eq52" title="Permalink to this equation">#</a></span>\[\omega_{12} = \omega_0 \left(\frac{I(0)}{I}\right)
 \text{exp}\left[ \int_{z_0}^z
 \frac{\left[z^2 + 4h^2 -4hz + \frac{R^2}{4}\right]}
 {\frac{R^2}{4} + \frac{z^2}{3}}
 \frac{\mathrm{d}z}{z}\right]\]</div>
 <p>which can also be reformulated as</p>
 <div class="math notranslate nohighlight" id="equation-eq53">
-<span class="eqno">()<a class="headerlink" href="#equation-eq53" title="Permalink to this equation">#</a></span>\[\begin{split}\omega_{12} = \omega_0 \left(\frac{I(0)}{I}\right)
+<span class="eqno">(53)<a class="headerlink" href="#equation-eq53" title="Permalink to this equation">#</a></span>\[\begin{split}\omega_{12} = \omega_0 \left(\frac{I(0)}{I}\right)
 \text{exp}\left[ 
 \int_{z_0}^z \frac{3z - 12h}{\frac{3R^2}{4} + z^2} \mathrm{d}z \nonumber\\
 + \left(12h^2 + \frac{3R^2}{4} \right)\int_{z_0}^z \frac{\mathrm{d}z}
 {z\left(\frac{3R^2}{4} + z^2\right)}
 \right].\end{split}\]</div>
-<p>A partial fraction expansion of the second integral in Equation <a class="reference internal" href="#equation-eq53">()</a> then gives</p>
+<p>A partial fraction expansion of the second integral in Equation <a class="reference internal" href="#equation-eq53">(53)</a> then gives</p>
 <div class="math notranslate nohighlight" id="equation-eq54">
-<span class="eqno">()<a class="headerlink" href="#equation-eq54" title="Permalink to this equation">#</a></span>\[\begin{split}\omega_{12} = \omega_0 \left(\frac{I(0)}{I}\right)
+<span class="eqno">(54)<a class="headerlink" href="#equation-eq54" title="Permalink to this equation">#</a></span>\[\begin{split}\omega_{12} = \omega_0 \left(\frac{I(0)}{I}\right)
 \text{exp}\left[ 
 \int_{z_0}^z\frac{3z - 12h}
 {\frac{3R^2}{4} + z^2} \mathrm{d}z \nonumber\\
@@ -513,7 +490,7 @@ document.write(`
 \right]\end{split}\]</div>
 <p>or, after some algebra,</p>
 <div class="math notranslate nohighlight" id="equation-eq55">
-<span class="eqno">()<a class="headerlink" href="#equation-eq55" title="Permalink to this equation">#</a></span>\[\begin{split}\omega_{12} = \omega_0 \left(\frac{I(0)}{I}\right)
+<span class="eqno">(55)<a class="headerlink" href="#equation-eq55" title="Permalink to this equation">#</a></span>\[\begin{split}\omega_{12} = \omega_0 \left(\frac{I(0)}{I}\right)
 \text{exp}\left[
 -\int_{z_0}^z \frac{12h}{ \frac{3R^2}{4} + z^2 } \mathrm{d}z \nonumber \\  
 - \left(\frac{16h^2}{R^2} - 2 \right) 
@@ -541,38 +518,38 @@ document.write(`
 \right].\end{split}\]</div>
 <p>The above solution can also be expressed in terms of the transverse radius of gyration as</p>
 <div class="math notranslate nohighlight" id="equation-eq56">
-<span class="eqno">()<a class="headerlink" href="#equation-eq56" title="Permalink to this equation">#</a></span>\[\begin{split}\omega_{12} = \omega_0 \left(\frac{k_1(0)}{k_1}\right)^{\frac{8h^2}{R^2}}
+<span class="eqno">(56)<a class="headerlink" href="#equation-eq56" title="Permalink to this equation">#</a></span>\[\begin{split}\omega_{12} = \omega_0 \left(\frac{k_1(0)}{k_1}\right)^{\frac{8h^2}{R^2}}
 \left(\frac{z}{h}\right)^{\frac{16h^2}{R^2}}\nonumber\\
 \text{exp}\left[\frac{8 \sqrt{3}h}{R} 
 \tan^{-1}\left( \frac{2\sqrt{3}R(z-h)}{3R^2 + 4zh} \right)
 \right].\end{split}\]</div>
-<p>Equation <a class="reference internal" href="#equation-eq56">()</a> explains that, for an end burning cylinder, the transverse rate is regulated by 3 time-varying functions: the ratio of the initial transverse radius of gyration to its instantaneous value, the ratio of the instantaneous half length to the initial half length, and an exponential function. The first of these functions grows as the burn progresses but is always bounded as its denominator is never zero. The latter two functions, however, always decay with time. Thus, irrespective of the nature of the cylinder, the transverse rates for the end burn are always decaying; the rate of decay is seen to be faster for prolate cylinders when compared to oblate cylinders, which makes sense in view of Equation <a class="reference internal" href="#equation-eq56">()</a>. This has also been observed in Reference <span id="id1">[<a class="reference internal" href="refs.html#id12" title="F.O. Eke and S.-M. Wang. Attitude behavior of a variable mass cylinder. J. Appl. Mech., 62(4):935-940, 1995.">Eke and Wang, 1995</a>]</span>.</p>
+<p>Equation <a class="reference internal" href="#equation-eq56">(56)</a> explains that, for an end burning cylinder, the transverse rate is regulated by 3 time-varying functions: the ratio of the initial transverse radius of gyration to its instantaneous value, the ratio of the instantaneous half length to the initial half length, and an exponential function. The first of these functions grows as the burn progresses but is always bounded as its denominator is never zero. The latter two functions, however, always decay with time. Thus, irrespective of the nature of the cylinder, the transverse rates for the end burn are always decaying; the rate of decay is seen to be faster for prolate cylinders when compared to oblate cylinders, which makes sense in view of Equation <a class="reference internal" href="#equation-eq56">(56)</a>. This has also been observed in Reference <span id="id1">[<a class="reference internal" href="refs.html#id12" title="F.O. Eke and S.-M. Wang. Attitude behavior of a variable mass cylinder. J. Appl. Mech., 62(4):935-940, 1995.">Eke and Wang, 1995</a>]</span>.</p>
 <p>The nutation angle for an end-burning cylinder is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq57">
-<span class="eqno">()<a class="headerlink" href="#equation-eq57" title="Permalink to this equation">#</a></span>\[\theta(t) = \tan^{-1}( K k_1^2 \Gamma(t) ),\]</div>
-<p>where <span class="math notranslate nohighlight">\(K = \frac{\omega_0}{k_3^2 \omega_{30}}=\)</span> constant. As both <span class="math notranslate nohighlight">\(\Gamma(t)\)</span> and <span class="math notranslate nohighlight">\(k_1\)</span> are generally decreasing with time, the nutation angle decays with time for any end burning cylinder. In other words, jet damping is observed for such a mass-varying cylinder. Figures <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-4-8</span></code> and <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-4-9</span></code> show the body and space surfaces for end burning cylinders where the <span class="math notranslate nohighlight">\(J_0 &gt; I_0\)</span> (initial <span class="math notranslate nohighlight">\(L = 1\)</span> m and <span class="math notranslate nohighlight">\(R = 0.8\)</span> m) whereas Figures <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-4-10</span></code> and <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-4-11</span></code> are for end-burning cylinders where <span class="math notranslate nohighlight">\(J_0 &lt; I_0\)</span> (initial <span class="math notranslate nohighlight">\(L = 1\)</span> m and <span class="math notranslate nohighlight">\(R = 0.5\)</span> m). It is interesting to note in the second case (where <span class="math notranslate nohighlight">\(J_0 &lt; I_0\)</span>) that the angular velocity vector changes its direction of rotation, about both <span class="math notranslate nohighlight">\({\bf b}_3\)</span> and <span class="math notranslate nohighlight">\({\bf n}_h\)</span>. Initially, it rotates in a clockwise direction and then switches to a counterclockwise direction, eventually converging to a pure spin about <span class="math notranslate nohighlight">\({\bf b}_3\)</span> in the body frame and <span class="math notranslate nohighlight">\({\bf n}_h\)</span> in the inertial frame. This transition point occurs when the ratio of the axial radius of gyration to the transverse radius of gyration falls below 1 and changes the sign of <span class="math notranslate nohighlight">\(\dot \chi\)</span> as given by Equation <a class="reference internal" href="axisymmetric_vms.html#equation-eq24">(24)</a>. In either case, the end burn is seen to exhibit a decay in the cone angle and is thus nutationally stable.</p>
+<span class="eqno">(57)<a class="headerlink" href="#equation-eq57" title="Permalink to this equation">#</a></span>\[\theta(t) = \tan^{-1}( K k_1^2 \Gamma(t) ),\]</div>
+<p>where <span class="math notranslate nohighlight">\(K = \frac{\omega_0}{k_3^2 \omega_{30}}=\)</span> constant. As both <span class="math notranslate nohighlight">\(\Gamma(t)\)</span> and <span class="math notranslate nohighlight">\(k_1\)</span> are generally decreasing with time, the nutation angle decays with time for any end burning cylinder. In other words, jet damping is observed for such a mass-varying cylinder. Figures <a class="reference internal" href="#fig-4-8"><span class="std std-numref">Fig. 7</span></a> and <a class="reference internal" href="#fig-4-9"><span class="std std-numref">Fig. 8</span></a> show the body and space surfaces for end burning cylinders where the <span class="math notranslate nohighlight">\(J_0 &gt; I_0\)</span> (initial <span class="math notranslate nohighlight">\(L = 1\)</span> m and <span class="math notranslate nohighlight">\(R = 0.8\)</span> m) whereas Figures <a class="reference internal" href="#fig-4-10"><span class="std std-numref">Fig. 9</span></a> and <a class="reference internal" href="#fig-4-11"><span class="std std-numref">Fig. 10</span></a> are for end-burning cylinders where <span class="math notranslate nohighlight">\(J_0 &lt; I_0\)</span> (initial <span class="math notranslate nohighlight">\(L = 1\)</span> m and <span class="math notranslate nohighlight">\(R = 0.5\)</span> m). It is interesting to note in the second case (where <span class="math notranslate nohighlight">\(J_0 &lt; I_0\)</span>) that the angular velocity vector changes its direction of rotation, about both <span class="math notranslate nohighlight">\({\bf b}_3\)</span> and <span class="math notranslate nohighlight">\({\bf n}_h\)</span>. Initially, it rotates in a clockwise direction and then switches to a counterclockwise direction, eventually converging to a pure spin about <span class="math notranslate nohighlight">\({\bf b}_3\)</span> in the body frame and <span class="math notranslate nohighlight">\({\bf n}_h\)</span> in the inertial frame. This transition point occurs when the ratio of the axial radius of gyration to the transverse radius of gyration falls below 1 and changes the sign of <span class="math notranslate nohighlight">\(\dot \chi\)</span> as given by Equation <a class="reference internal" href="axisymmetric_vms.html#equation-eq24">(24)</a>. In either case, the end burn is seen to exhibit a decay in the cone angle and is thus nutationally stable.</p>
 <figure class="align-default" id="fig-4-8">
 <a class="reference internal image-reference" href="_images/Fig7.png"><img alt="_images/Fig7.png" src="_images/Fig7.png" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-text">End burn: body surface (<span class="math notranslate nohighlight">\(J_0 &gt; I_0\)</span>).</span><a class="headerlink" href="#fig-4-8" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">End burn: body surface (<span class="math notranslate nohighlight">\(J_0 &gt; I_0\)</span>).</span><a class="headerlink" href="#fig-4-8" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="fig-4-9">
 <a class="reference internal image-reference" href="_images/Fig8.png"><img alt="_images/Fig8.png" src="_images/Fig8.png" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-text">End burn: space surface (<span class="math notranslate nohighlight">\(J_0 &gt; I_0\)</span>).</span><a class="headerlink" href="#fig-4-9" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">End burn: space surface (<span class="math notranslate nohighlight">\(J_0 &gt; I_0\)</span>).</span><a class="headerlink" href="#fig-4-9" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="fig-4-10">
 <a class="reference internal image-reference" href="_images/Fig9.png"><img alt="_images/Fig9.png" src="_images/Fig9.png" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-text">End burn: body surface (<span class="math notranslate nohighlight">\(J_0 &lt; I_0\)</span>).</span><a class="headerlink" href="#fig-4-10" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">End burn: body surface (<span class="math notranslate nohighlight">\(J_0 &lt; I_0\)</span>).</span><a class="headerlink" href="#fig-4-10" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="fig-4-11">
 <a class="reference internal image-reference" href="_images/Fig10.png"><img alt="_images/Fig10.png" src="_images/Fig10.png" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-text">End burn: space surface (<span class="math notranslate nohighlight">\(J_0 &lt; I_0\)</span>).</span><a class="headerlink" href="#fig-4-11" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">End burn: space surface (<span class="math notranslate nohighlight">\(J_0 &lt; I_0\)</span>).</span><a class="headerlink" href="#fig-4-11" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1020,6 +997,24 @@ Final time: 99.0
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="vms_uniform_burn.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Uniform Burn</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="vms_radial_burn.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Radial Burn</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
