@@ -15,7 +15,7 @@ parts:
     chapters:
     - file: axisymmetric_vm_cylinder
     - file: vms_uniform_burn
-    - file: vms_end_burn_normallized_quaternion
+    - file: vms_end_burn
     - file: vms_radial_burn
   - caption: References
     chapters:
