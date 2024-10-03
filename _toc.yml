@@ -11,6 +11,7 @@ parts:
     chapters:
     - file: axisymmetric_vms
     - file: geometry-of-motion
+    - file: euler-angles-vms
   - caption: Attitude Dynamics of Variable Mass Cylinders
     chapters:
     - file: axisymmetric_vm_cylinder
