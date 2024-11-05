@@ -3,7 +3,7 @@
 
 title: Variable Mass Systems
 author: Angadh Nanjangud
-logo: HQ_Final_Logo.png
+logo: _static/logo-common.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -41,3 +41,13 @@ latex:
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references.bib
+
+# Add a license to the book
+html:
+  extra_footer: |
+    <p>
+    &#169 Copyright Angadh Nanjangud and SpaceHQ Ltd
+    </p>
+sphinx:
+  config:
+    html_show_copyright: false
