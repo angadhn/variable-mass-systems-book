@@ -1,0 +1,197 @@
+\section{Euler Angle Solutions}
+To derive analytical solutions to the Euler angles, we introduce two more inertially fixed unit vectors
+$\mathbf{n}_1$ and $\mathbf{n}_2$ that are orthogonal to $\mathbf{n}_3$ that make up the inertial fixed frame.
+Then, a $3$-$1$-$3$ rotation sequence is used to reorient the body-fixed frame with the inertial frame 
+by an amount of $\psi$, $\theta$, and $\phi$, respectively. This $\theta$ is the same as the 
+nutation angle derived in the previous section; which is why we say that it is also the
+solution to the second Euler angle.
+
+Next, we will derive analytical expressions for the first and third Euler angles for variable mass 
+systems ($\psi$ and $\phi$, respectively) which has not previously been addressed in the literature. 
+To do so, we will first extract the angular velocity vector in terms of Euler angle rates as:
+\begin{equation}
+\label{eq_euler_angles_omega_vms}
+\begin{split}
+\boldsymbol\omega &= \dot{\psi} {\bf k}_3 + \dot{\theta} {\bf k}_1 + \dot{\phi} {\bf j}_{3}\\
+&= \dot{\theta} {\bf k}_1 + \dot{\phi} \sin \theta {\bf k}_{2} + (\dot{\psi} + \dot{\phi} \cos \theta) {\bf k}_3 
+\end{split}
+\end{equation}
+
+Equating $\boldsymbol\omega$ given in the RHS of Equation \eqref{eq_euler_angles_omega_vms} to the RHS of Equation \eqref{eq32} gives
+\begin{equation}
+\label{eq_euler_angles_omega_vms_3}
+\dot{\theta} {\bf k}_1 + \dot{\phi} \sin \theta {\bf k}_{2} + (\dot{\psi} + \dot{\phi} \cos \theta) {\bf k}_3 = \omega_0 \Gamma{\bf b}_{12} + \omega_3 {\bf b}_3,
+\end{equation}
+but for the assumed Euler 3-1-3 rotation sequence, we have $\hat{\bf b}_3 = {\bf k}_3$ thus
+\begin{equation}
+\omega_3 = \dot\psi + \dot{\phi} \cos \theta.
+\end{equation}
+Consequently, we have
+\begin{equation}
+\dot{\theta} {\bf k}_1 + \dot{\phi} \sin \theta {\bf k}_{2} = \omega_0 \Gamma{\bf b}_{12} 
+\end{equation}
+which can be expressed in terms of the body-fixed frame as
+\begin{equation}
+\dot{\theta} (-\sin\psi {\bf b}_1 + \cos\psi {\bf b}_2)  + \dot{\phi} \sin \theta (\cos\psi {\bf b}_1 + \sin\psi {\bf b}_2) = \omega_0 \Gamma {\bf b}_{12}.
+\end{equation}
+If $\psi$ is arbitraily chosen to be identical to $\chi$, then 
+\begin{equation}
+\dot{\theta} (-\sin\chi {\bf b}_1 + \cos\chi {\bf b}_2)  + \dot{\phi} \sin \theta (\cos\chi {\bf b}_1 + \sin\chi {\bf b}_2) = \omega_0 \Gamma {\bf b}_{12}
+\end{equation}
+or
+\begin{equation}
+\dot{\theta} {\bf b}_t  + \dot{\phi} \sin \theta {\bf b}_{12} = \omega_0 \Gamma {\bf b}_{12}.
+\end{equation}
+which then gives us:
+\begin{equation}
+\dot{\phi} \sin \theta = \omega_0 \Gamma.
+\end{equation}
+
+Now, we can make the assumption that ${\bf k}_2$ is aligned with ${\bf b}_{12}$ and
+therefore ${\bf k}_1$ is aligned with a unit vector orthogonal to both ${\bf b}_{12}$ and ${\bf b}_3$, which will allow us to solve for $\dot{\psi}$ and $\dot{\phi}$.
+
+If now we make the special choice of the arbitrary inertially fixed unit 
+vector ${\bf n}_{3}$ so as to align it with the angular momentum
+${\bf H}^*$, then we see that the nutation angle $\theta$ is also the
+second Euler angle (i.e., the angle between ${\bf b}_{3}$ and
+${\bf H}^*$ in Figure \ref{fig-4-3}).
+
+If axisymmetry is assumed for both constant mass and variable mass systems, then $\theta$ is identical
+in form to Equation \eqref{eq39}; however, $\dot{\theta} = 0$ only for the former
+given that $I, J$ and $\omega_3$ are constant. For a general axisymmetric variable mass system,
+$\dot{\theta} \neq 0$ and the expression for $\tan \theta$ is dependent on burn geometries but
+a general expression for $\dot{\theta}$ is given by:
+\begin{equation}
+\label{eq_euler_angles_theta_dot}
+\dot{\theta} = \frac{\left(I \omega_{12} \dot{\omega}_3 + I \omega_3 \dot{\omega}_{12} + \omega_{12} \omega_3 \dot{I}\right) J - I \omega_{12} \omega_3 \dot{J}}{I^2 \omega_{12}^2 \omega_3^2 + J^2}
+\end{equation}
+
+Discussions on three specific burns will be presented in the following sections but we proceed to
+derive analytical forms for the second and third Euler angle rates, $\dot{\psi}$ and $\dot{\phi}$
+so that we can then solve for the first and third Euler angles, $\psi$ and $\phi$, analytically
+for each of the three burns.
+
+\section{Deriving $\dot{\phi}$ and $\dot{\psi}$ from $\boldsymbol\omega$}
+
+Equating $\boldsymbol\omega$ given in Equation \eqref{eq_euler_angles_omega_vms} to that in Equation \eqref{eq32} gives us
+\begin{equation}
+\label{eq_euler_angles_omega_vms_3}
+\dot{\theta} {\bf k}_1 + \dot{\phi} \sin \theta {\bf k}_{2} + (\dot{\psi} + \dot{\phi} \cos \theta) {\bf k}_3 = \omega_0 \Gamma{\bf b}_{12} + \omega_3 {\bf b}_3,
+\end{equation}
+
+but noting that $\hat{\bf b}_3 = {\bf k}_3$, we have
+\begin{equation}
+\label{eq_euler_angles_omega_3_euler_rates}
+\omega_3 = \dot\psi + \dot{\phi} \cos \theta
+\end{equation}
+which tells us that 
+\begin{equation}
+\label{eq_euler_angles_dot_psi}
+\dot{\psi} = \omega_3 - \dot{\phi} \cos \theta.
+\end{equation}
+but also
+\begin{equation}
+\label{eq_euler_angles_dot_psi_cos_theta}
+\dot{\phi} \cos \theta = \omega_3 - \dot{\psi}
+\end{equation}
+
+From Equation \eqref{eq_euler_angles_omega_vms}, we also have
+\begin{equation}
+\label{eq_euler_angles_dot_theta_b12}
+\dot{\theta} {\bf k}_1 + \dot{\phi} \sin \theta {\bf k}_{2} = \omega_0 \Gamma{\bf b}_{12} 
+\end{equation}
+
+One can equate the two by computing magnitudes of the vectors on each side of the equation:
+\begin{equation}
+\label{eq_euler_angles_dot_theta_b12_magnitude}
+\dot{\theta}^2 + (\dot{\phi} \sin \theta)^2 = (\omega_0 \Gamma)^{2}
+\end{equation}
+
+which can be rewritten as
+\begin{equation}
+\label{eq_euler_angles_dot_theta_b12_magnitude_rewrite}
+\dot{\phi} \sin \theta = \sqrt{(\omega_0 \Gamma)^{2} - \dot{\theta}^2}.
+\end{equation}
+
+If we divide Equations \eqref{eq_euler_angles_dot_theta_b12_magnitude_rewrite} by
+\eqref{eq_euler_angles_dot_psi_cos_theta}, we get:
+\begin{equation}
+\label{eq_euler_angles_dot_phi_psi}
+\dot{\phi} \tan \theta = \frac{\sqrt{(\omega_0 \Gamma)^{2} - \dot{\theta}^2}}{\omega_3 - \dot{\psi}}.
+\end{equation}
+Now, in the case of a constant mass axisymmetric rigid body, $\Gamma = 1$ but we also have $\dot
+{\theta} = 0$, which makes $\theta$ a constant. Further, $\omega_3$ and $\dot{\psi}$ are also
+found to be constant thus making $\dot{\phi}$ a constant; these conditions do not hold for a variable mass system. So to make further progress, we need to consider specific burns, we
+revisit Equation \eqref{eq39} which is
+\begin{align}
+\label{eq39_tan_theta}
+\tan \theta &= \frac{I \omega_{12}}{J \omega_3}\\
+\frac{J}{I} \omega_3 &=  \sqrt{\frac{(\dot{\phi} \sin \theta)^2 + \dot{\theta}^2}{\tan^2 \theta}}\\
+\frac{J}{I} \omega_3 &=  \sqrt{(\dot{\phi} \cos\theta)^2 + \frac{\dot{\theta}^2}{\tan^2 \theta}}\\
+\dot{\phi} \cos\theta &= \sqrt{\bigg(\frac{J}{I} \omega_3\bigg)^2 - \frac{\dot{\theta}^2}{\tan^2 \theta}}
+\end{align}
+which finally gives us the equation for $\dot{\phi}$ as:
+\begin{equation}
+\label{eq_euler_angles_dot_phi_for_axisym_VMS}
+\dot{\phi} = \frac{1}{\cos\theta} \sqrt{\bigg(\frac{J}{I} \omega_3\bigg)^2 - \frac{\dot{\theta}^2}{\tan^2 \theta}}
+\end{equation}
+
+We can then derive the expression for $\dot{\psi}$ by substituting for $\omega_3$ from Equation \eqref{eq_euler_angles_omega_3_euler_rates} in to Equation \eqref{eq39_tan_theta} to get:
+\begin{align}
+\tan \theta &= \frac{I \omega_{12}}{J \omega_3}\\
+\tan{\theta} &= \frac{I \Gamma \omega_{0}}{J (\dot{\psi} + \dot{\phi} \cos \theta)}\\
+\dot{\psi} + \dot{\phi} \cos \theta &= \frac{I}{J} \frac{\sqrt{(\dot{\phi} \sin \theta)^2 + \dot{\theta}^2}}{\tan \theta}\\
+\dot{\psi} &= \frac{I}{J} \frac{\sqrt{(\dot{\phi} \sin \theta)^2 + \dot{\theta}^2}}{\tan \theta} - \dot{\phi} \cos \theta
+\end{align}
+
+Evaluation of these angles $\theta$ and $\beta$ along with the solutions to the angular velocities permit a visual understanding of the motion of the body in both inertial space and the body-fixed coordinate system.
+
+In the case of axisymmetric rigid bodies of constant mass, $\Gamma = 1$ and the spin rate and inertia scalars are constant. Consequently, in Equation \eqref{eq39} and \eqref{eq40}, both angles evaluate to constants and visualizing the motion of $\boldsymbol{\omega}$ results in the formation of two cones: as it rotates about ${\bf b}_3$ and another as it rotates about ${\bf n}_h$, a unit vector parallel to the inertially fixed ${\bf H}^*$. The two cones are appropriately named the \textit{body cone} and \textit{space cone}, respectively.
+
+In the case of axisymmetric variable mass systems, angles $\theta$ and $\beta$ are typically functions of time. The angles may grow or decay as dictated by the instantaneous values of the radii of gyration, $\Gamma$, and the spin rate. It is also possible, in the case of the same variable mass system, for $\beta$ to exceed $\theta$ at certain instants while it may not at certain other instants. Figure~\ref{fig-4-3} represents an instant where $\beta>\theta$, which occurs when $k_3>k_1$. Also, $\boldsymbol{\omega}$ does not trace cones as it rotates about ${\bf b}_3$ and ${\bf n}_h$. Thus, generic names are used for the surfaces it traces; in this document, they are referred to as the \textit{body surface} and \textit{space surface} (which reduce to the \textit{body cone} and \textit{space cone} for the limiting case of a constant mass rigid body, respectively).
+
+In the spacecraft dynamics literature, $\theta$ is referred to as the nutation angle \cite{kaplan}. In classical mechanics, $\theta$ may also be identified as the second Euler angle \cite{likinstext} and, thus, Equation \eqref{eq39} also gives the solution to said Euler angle. Growth in nutation angles results in a coning motion which is undesirable in spacecraft. Potential hazards of excessive nutation or coning motion might be poor initial conditions for subsequent mission operations, or possible loss of communications with a spacecraft due to incorrect pointing between its antenna and the base station. One such case of excessive nutation growth was observed in missions powered by the STAR-48 SRM \cite{meyer, flandro, cochran, or, mingorI, mingori2}. To mitigate this growth, an active nutation damper is used in these missions \cite{webster}.
+
+Closed form expressions to $\theta$ are available when the angular speeds are themselves available in closed form. These closed-form expressions are invaluable to not only evaluate stability but also for appropriate control strategy formulation to temper any instabilities. Solutions to the angular speeds are derived in the next section for a special class of variable mass systems: the axisymmetric variable mass cylinder. These closed form solutions are then utilized in constructing the body and space surfaces. The choice of cylindrical systems as an idealization is based on their use in several prior studies on rocket flight; Snyder and Warner \cite{snyder} and Eke et al. \cite{ekewang2,ekemao2} are some examples of investigators who have incorporated cylindrical propellant grains in their studies on the attitude motions of variable mass space vehicles.
+
+\section{Summary of all equations}
+
+The equations that fully describe the equations of attitude 
+motion of an axisymmetric variable mass system are given by:
+\begin{equation}
+  \label{11}
+  \dot{\omega}_1 = \frac{I - J}{I} \omega_2\omega_3
+  - \frac{1}{I}\bigg[\dot{I} - \dot{m}(z_e^2 + \frac{R^2}{4})\bigg] \omega_1
+\end{equation}
+\begin{equation}
+  \label{12}
+    \dot{\omega}_2 = -\frac{I - J}{I} \omega_3\omega_1
+    - \frac{1}{I}\bigg[\dot I - \dot{m}(z_e^2 +
+    \frac{R^2}{4})\bigg] \omega_2
+\end{equation}
+
+\begin{equation}
+    \label{13}
+    \dot{\omega}_3 = - \frac{1}{J}[\dot{J} - \dot{m}(\frac{R^2}{2})] \omega_3.
+\end{equation}
+
+% \begin{equation}
+% % \label{eq_euler_angles_dot_theta_final}
+% \dot{\theta} = \pm \sqrt{(\omega_0 \Gamma)^2 - (\dot{\phi} \sin \theta)^2}
+% \end{equation}
+
+\begin{equation}
+\label{eq_euler_angles_dot_theta_final}
+\dot{\theta} = \frac{\left(I \omega_{12} \dot{\omega}_3 + I \omega_3 \dot{\omega}_{12} + \omega_{12} \omega_3 \dot{I}\right) J - I \omega_{12} \omega_3 \dot{J}}{I^2 \omega_{12}^2 \omega_3^2 + J^2}
+\end{equation}
+
+\begin{equation}
+\label{eq_euler_angles_dot_phi_final}
+\dot{\phi} = \frac{1}{\cos\theta} \sqrt{\bigg(\frac{J}{I} \omega_3\bigg)^2 - \frac{\dot{\theta}^2}{\tan^2 \theta}}
+\end{equation}
+
+\begin{equation}
+\label{eq_euler_angles_dot_psi_final}
+\dot{\psi} = \frac{I}{J} \frac{\sqrt{(\dot{\phi} \sin \theta)^2 + \dot{\theta}^2}}{\tan \theta} - \dot{\phi} \cos \theta
+\end{equation}
+
